@@ -18,22 +18,16 @@ class GameScene: SKScene {
         // Set background to sky blue
         backgroundColor = UIColor(red: 0.4, green: 0.6, blue: 0.95, alpha: 1.0)
         
-        // create a constant sprite node
-        let mySprite = SKSpriteNode(color: .blue, size: CGSize(width: 50, height: 50))
+        // create a bee
+        let bee = SKSpriteNode(imageNamed: "bee")
         
-        // set position of mySprite
-        let position = CGPoint(x: view.bounds.width * 0.75, y: view.bounds.height * 0.666)
-        mySprite.position = position
+        // set the size
+        bee.size = CGSize(width: 100, height: 100)
         
-        // add sprite to node tree
-        addChild(mySprite)
+        // set position
+        bee.position = CGPoint(x: view.bounds.width / 2, y: view.bounds.height * 0.75)
         
-        // setup action for sprite
-        let demoAction = SKAction.move(to: CGPoint(x: view.bounds.width * 0.25 / 2, y: view.bounds.height * 0.666), duration: 5)
-        let demoResizeAction = SKAction.scale(to: 2, duration: 5)
-        let demoRotateAction = SKAction.rotate(byAngle: 4 * CGFloat.pi, duration: 5)
-        let actionGroup = SKAction.group([demoResizeAction, demoAction, demoRotateAction])
-        mySprite.run(SKAction.sequence([actionGroup]))
-        
+        // add bee to scene
+        addChild(bee)
     }
 }
