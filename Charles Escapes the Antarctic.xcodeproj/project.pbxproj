@@ -1,0 +1,575 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		65A5AD2D201147A100A0DA7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5AD2C201147A100A0DA7F /* AppDelegate.swift */; };
+		65A5AD2F201147A100A0DA7F /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65A5AD2E201147A100A0DA7F /* GameScene.sks */; };
+		65A5AD31201147A100A0DA7F /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65A5AD30201147A100A0DA7F /* Actions.sks */; };
+		65A5AD33201147A100A0DA7F /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5AD32201147A100A0DA7F /* GameScene.swift */; };
+		65A5AD35201147A100A0DA7F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5AD34201147A100A0DA7F /* GameViewController.swift */; };
+		65A5AD38201147A100A0DA7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65A5AD36201147A100A0DA7F /* Main.storyboard */; };
+		65A5AD3A201147A100A0DA7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65A5AD39201147A100A0DA7F /* Assets.xcassets */; };
+		65A5AD3D201147A100A0DA7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65A5AD3B201147A100A0DA7F /* LaunchScreen.storyboard */; };
+		65A5AD48201147A200A0DA7F /* Charles_Escapes_the_AntarcticTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5AD47201147A200A0DA7F /* Charles_Escapes_the_AntarcticTests.swift */; };
+		65A5AD53201147A200A0DA7F /* Charles_Escapes_the_AntarcticUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5AD52201147A200A0DA7F /* Charles_Escapes_the_AntarcticUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		65A5AD44201147A200A0DA7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65A5AD21201147A100A0DA7F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65A5AD28201147A100A0DA7F;
+			remoteInfo = "Charles Escapes the Antarctic";
+		};
+		65A5AD4F201147A200A0DA7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65A5AD21201147A100A0DA7F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65A5AD28201147A100A0DA7F;
+			remoteInfo = "Charles Escapes the Antarctic";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		65A5AD29201147A100A0DA7F /* Charles Escapes the Antarctic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Charles Escapes the Antarctic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		65A5AD2C201147A100A0DA7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		65A5AD2E201147A100A0DA7F /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		65A5AD30201147A100A0DA7F /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		65A5AD32201147A100A0DA7F /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		65A5AD34201147A100A0DA7F /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		65A5AD37201147A100A0DA7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		65A5AD39201147A100A0DA7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		65A5AD3C201147A100A0DA7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		65A5AD3E201147A200A0DA7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65A5AD43201147A200A0DA7F /* Charles Escapes the AntarcticTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Charles Escapes the AntarcticTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		65A5AD47201147A200A0DA7F /* Charles_Escapes_the_AntarcticTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charles_Escapes_the_AntarcticTests.swift; sourceTree = "<group>"; };
+		65A5AD49201147A200A0DA7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65A5AD4E201147A200A0DA7F /* Charles Escapes the AntarcticUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Charles Escapes the AntarcticUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		65A5AD52201147A200A0DA7F /* Charles_Escapes_the_AntarcticUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charles_Escapes_the_AntarcticUITests.swift; sourceTree = "<group>"; };
+		65A5AD54201147A200A0DA7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		65A5AD26201147A100A0DA7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65A5AD40201147A200A0DA7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65A5AD4B201147A200A0DA7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		65A5AD20201147A100A0DA7F = {
+			isa = PBXGroup;
+			children = (
+				65A5AD2B201147A100A0DA7F /* Charles Escapes the Antarctic */,
+				65A5AD46201147A200A0DA7F /* Charles Escapes the AntarcticTests */,
+				65A5AD51201147A200A0DA7F /* Charles Escapes the AntarcticUITests */,
+				65A5AD2A201147A100A0DA7F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		65A5AD2A201147A100A0DA7F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				65A5AD29201147A100A0DA7F /* Charles Escapes the Antarctic.app */,
+				65A5AD43201147A200A0DA7F /* Charles Escapes the AntarcticTests.xctest */,
+				65A5AD4E201147A200A0DA7F /* Charles Escapes the AntarcticUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		65A5AD2B201147A100A0DA7F /* Charles Escapes the Antarctic */ = {
+			isa = PBXGroup;
+			children = (
+				65A5AD2C201147A100A0DA7F /* AppDelegate.swift */,
+				65A5AD2E201147A100A0DA7F /* GameScene.sks */,
+				65A5AD30201147A100A0DA7F /* Actions.sks */,
+				65A5AD32201147A100A0DA7F /* GameScene.swift */,
+				65A5AD34201147A100A0DA7F /* GameViewController.swift */,
+				65A5AD36201147A100A0DA7F /* Main.storyboard */,
+				65A5AD39201147A100A0DA7F /* Assets.xcassets */,
+				65A5AD3B201147A100A0DA7F /* LaunchScreen.storyboard */,
+				65A5AD3E201147A200A0DA7F /* Info.plist */,
+			);
+			path = "Charles Escapes the Antarctic";
+			sourceTree = "<group>";
+		};
+		65A5AD46201147A200A0DA7F /* Charles Escapes the AntarcticTests */ = {
+			isa = PBXGroup;
+			children = (
+				65A5AD47201147A200A0DA7F /* Charles_Escapes_the_AntarcticTests.swift */,
+				65A5AD49201147A200A0DA7F /* Info.plist */,
+			);
+			path = "Charles Escapes the AntarcticTests";
+			sourceTree = "<group>";
+		};
+		65A5AD51201147A200A0DA7F /* Charles Escapes the AntarcticUITests */ = {
+			isa = PBXGroup;
+			children = (
+				65A5AD52201147A200A0DA7F /* Charles_Escapes_the_AntarcticUITests.swift */,
+				65A5AD54201147A200A0DA7F /* Info.plist */,
+			);
+			path = "Charles Escapes the AntarcticUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		65A5AD28201147A100A0DA7F /* Charles Escapes the Antarctic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65A5AD57201147A200A0DA7F /* Build configuration list for PBXNativeTarget "Charles Escapes the Antarctic" */;
+			buildPhases = (
+				65A5AD25201147A100A0DA7F /* Sources */,
+				65A5AD26201147A100A0DA7F /* Frameworks */,
+				65A5AD27201147A100A0DA7F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Charles Escapes the Antarctic";
+			productName = "Charles Escapes the Antarctic";
+			productReference = 65A5AD29201147A100A0DA7F /* Charles Escapes the Antarctic.app */;
+			productType = "com.apple.product-type.application";
+		};
+		65A5AD42201147A200A0DA7F /* Charles Escapes the AntarcticTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65A5AD5A201147A200A0DA7F /* Build configuration list for PBXNativeTarget "Charles Escapes the AntarcticTests" */;
+			buildPhases = (
+				65A5AD3F201147A200A0DA7F /* Sources */,
+				65A5AD40201147A200A0DA7F /* Frameworks */,
+				65A5AD41201147A200A0DA7F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				65A5AD45201147A200A0DA7F /* PBXTargetDependency */,
+			);
+			name = "Charles Escapes the AntarcticTests";
+			productName = "Charles Escapes the AntarcticTests";
+			productReference = 65A5AD43201147A200A0DA7F /* Charles Escapes the AntarcticTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		65A5AD4D201147A200A0DA7F /* Charles Escapes the AntarcticUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65A5AD5D201147A200A0DA7F /* Build configuration list for PBXNativeTarget "Charles Escapes the AntarcticUITests" */;
+			buildPhases = (
+				65A5AD4A201147A200A0DA7F /* Sources */,
+				65A5AD4B201147A200A0DA7F /* Frameworks */,
+				65A5AD4C201147A200A0DA7F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				65A5AD50201147A200A0DA7F /* PBXTargetDependency */,
+			);
+			name = "Charles Escapes the AntarcticUITests";
+			productName = "Charles Escapes the AntarcticUITests";
+			productReference = 65A5AD4E201147A200A0DA7F /* Charles Escapes the AntarcticUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		65A5AD21201147A100A0DA7F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Daniel Pratt";
+				TargetAttributes = {
+					65A5AD28201147A100A0DA7F = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					65A5AD42201147A200A0DA7F = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 65A5AD28201147A100A0DA7F;
+					};
+					65A5AD4D201147A200A0DA7F = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 65A5AD28201147A100A0DA7F;
+					};
+				};
+			};
+			buildConfigurationList = 65A5AD24201147A100A0DA7F /* Build configuration list for PBXProject "Charles Escapes the Antarctic" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 65A5AD20201147A100A0DA7F;
+			productRefGroup = 65A5AD2A201147A100A0DA7F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				65A5AD28201147A100A0DA7F /* Charles Escapes the Antarctic */,
+				65A5AD42201147A200A0DA7F /* Charles Escapes the AntarcticTests */,
+				65A5AD4D201147A200A0DA7F /* Charles Escapes the AntarcticUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		65A5AD27201147A100A0DA7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65A5AD38201147A100A0DA7F /* Main.storyboard in Resources */,
+				65A5AD2F201147A100A0DA7F /* GameScene.sks in Resources */,
+				65A5AD3A201147A100A0DA7F /* Assets.xcassets in Resources */,
+				65A5AD3D201147A100A0DA7F /* LaunchScreen.storyboard in Resources */,
+				65A5AD31201147A100A0DA7F /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65A5AD41201147A200A0DA7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65A5AD4C201147A200A0DA7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		65A5AD25201147A100A0DA7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65A5AD33201147A100A0DA7F /* GameScene.swift in Sources */,
+				65A5AD35201147A100A0DA7F /* GameViewController.swift in Sources */,
+				65A5AD2D201147A100A0DA7F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65A5AD3F201147A200A0DA7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65A5AD48201147A200A0DA7F /* Charles_Escapes_the_AntarcticTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65A5AD4A201147A200A0DA7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65A5AD53201147A200A0DA7F /* Charles_Escapes_the_AntarcticUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		65A5AD45201147A200A0DA7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65A5AD28201147A100A0DA7F /* Charles Escapes the Antarctic */;
+			targetProxy = 65A5AD44201147A200A0DA7F /* PBXContainerItemProxy */;
+		};
+		65A5AD50201147A200A0DA7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65A5AD28201147A100A0DA7F /* Charles Escapes the Antarctic */;
+			targetProxy = 65A5AD4F201147A200A0DA7F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		65A5AD36201147A100A0DA7F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65A5AD37201147A100A0DA7F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		65A5AD3B201147A100A0DA7F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65A5AD3C201147A100A0DA7F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		65A5AD55201147A200A0DA7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		65A5AD56201147A200A0DA7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		65A5AD58201147A200A0DA7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZJ769HHQS2;
+				INFOPLIST_FILE = "Charles Escapes the Antarctic/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blaumagier.Charles-Escapes-the-Antarctic";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		65A5AD59201147A200A0DA7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZJ769HHQS2;
+				INFOPLIST_FILE = "Charles Escapes the Antarctic/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blaumagier.Charles-Escapes-the-Antarctic";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		65A5AD5B201147A200A0DA7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZJ769HHQS2;
+				INFOPLIST_FILE = "Charles Escapes the AntarcticTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blaumagier.Charles-Escapes-the-AntarcticTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Charles Escapes the Antarctic.app/Charles Escapes the Antarctic";
+			};
+			name = Debug;
+		};
+		65A5AD5C201147A200A0DA7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZJ769HHQS2;
+				INFOPLIST_FILE = "Charles Escapes the AntarcticTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blaumagier.Charles-Escapes-the-AntarcticTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Charles Escapes the Antarctic.app/Charles Escapes the Antarctic";
+			};
+			name = Release;
+		};
+		65A5AD5E201147A200A0DA7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZJ769HHQS2;
+				INFOPLIST_FILE = "Charles Escapes the AntarcticUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blaumagier.Charles-Escapes-the-AntarcticUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Charles Escapes the Antarctic";
+			};
+			name = Debug;
+		};
+		65A5AD5F201147A200A0DA7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZJ769HHQS2;
+				INFOPLIST_FILE = "Charles Escapes the AntarcticUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blaumagier.Charles-Escapes-the-AntarcticUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Charles Escapes the Antarctic";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		65A5AD24201147A100A0DA7F /* Build configuration list for PBXProject "Charles Escapes the Antarctic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65A5AD55201147A200A0DA7F /* Debug */,
+				65A5AD56201147A200A0DA7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65A5AD57201147A200A0DA7F /* Build configuration list for PBXNativeTarget "Charles Escapes the Antarctic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65A5AD58201147A200A0DA7F /* Debug */,
+				65A5AD59201147A200A0DA7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65A5AD5A201147A200A0DA7F /* Build configuration list for PBXNativeTarget "Charles Escapes the AntarcticTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65A5AD5B201147A200A0DA7F /* Debug */,
+				65A5AD5C201147A200A0DA7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65A5AD5D201147A200A0DA7F /* Build configuration list for PBXNativeTarget "Charles Escapes the AntarcticUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65A5AD5E201147A200A0DA7F /* Debug */,
+				65A5AD5F201147A200A0DA7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 65A5AD21201147A100A0DA7F /* Project object */;
+}
