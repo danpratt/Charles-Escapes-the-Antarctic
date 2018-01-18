@@ -16,7 +16,7 @@
 		65A5AD3D201147A100A0DA7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65A5AD3B201147A100A0DA7F /* LaunchScreen.storyboard */; };
 		65A5AD48201147A200A0DA7F /* Charles_Escapes_the_AntarcticTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5AD47201147A200A0DA7F /* Charles_Escapes_the_AntarcticTests.swift */; };
 		65A5AD53201147A200A0DA7F /* Charles_Escapes_the_AntarcticUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5AD52201147A200A0DA7F /* Charles_Escapes_the_AntarcticUITests.swift */; };
-		65A5AD6520115B5700A0DA7F /* Enemies.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65A5AD6420115B5700A0DA7F /* Enemies.xcassets */; };
+		65A5AD67201164B500A0DA7F /* bee.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 65A5AD66201164B500A0DA7F /* bee.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +52,7 @@
 		65A5AD4E201147A200A0DA7F /* Charles Escapes the AntarcticUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Charles Escapes the AntarcticUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A5AD52201147A200A0DA7F /* Charles_Escapes_the_AntarcticUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charles_Escapes_the_AntarcticUITests.swift; sourceTree = "<group>"; };
 		65A5AD54201147A200A0DA7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		65A5AD6420115B5700A0DA7F /* Enemies.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Enemies.xcassets; sourceTree = "<group>"; };
+		65A5AD66201164B500A0DA7F /* bee.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bee.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +109,7 @@
 				65A5AD34201147A100A0DA7F /* GameViewController.swift */,
 				65A5AD36201147A100A0DA7F /* Main.storyboard */,
 				65A5AD39201147A100A0DA7F /* Assets.xcassets */,
-				65A5AD6420115B5700A0DA7F /* Enemies.xcassets */,
+				65A5AD68201164E300A0DA7F /* Enemies */,
 				65A5AD3B201147A100A0DA7F /* LaunchScreen.storyboard */,
 				65A5AD3E201147A200A0DA7F /* Info.plist */,
 			);
@@ -132,6 +132,14 @@
 				65A5AD54201147A200A0DA7F /* Info.plist */,
 			);
 			path = "Charles Escapes the AntarcticUITests";
+			sourceTree = "<group>";
+		};
+		65A5AD68201164E300A0DA7F /* Enemies */ = {
+			isa = PBXGroup;
+			children = (
+				65A5AD66201164B500A0DA7F /* bee.atlas */,
+			);
+			path = Enemies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,11 +249,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65A5AD67201164B500A0DA7F /* bee.atlas in Resources */,
 				65A5AD38201147A100A0DA7F /* Main.storyboard in Resources */,
 				65A5AD3A201147A100A0DA7F /* Assets.xcassets in Resources */,
 				65A5AD3D201147A100A0DA7F /* LaunchScreen.storyboard in Resources */,
 				65A5AD31201147A100A0DA7F /* Actions.sks in Resources */,
-				65A5AD6520115B5700A0DA7F /* Enemies.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
