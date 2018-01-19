@@ -20,7 +20,7 @@ class Ground: SKSpriteNode, GameSprite {
         self.size = size
         
         // set anchor point so we can place it just slightly above the bottom of the screen
-        self.anchorPoint = CGPoint(x: 0, y: 1)
+        anchorPoint = CGPoint(x: 0, y: 1)
         
         // default to ice texture
         if groundTexture == nil {
@@ -32,7 +32,7 @@ class Ground: SKSpriteNode, GameSprite {
         
         // setup physics body
         let pointTopRight = CGPoint(x: size.width, y: 0)
-        self.physicsBody = SKPhysicsBody(edgeFrom: CGPoint.zero, to: pointTopRight)
+        physicsBody = SKPhysicsBody(edgeFrom: CGPoint.zero, to: pointTopRight)
     }
     
     // OnTap is only here to conform to protocol

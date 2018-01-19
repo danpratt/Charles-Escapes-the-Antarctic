@@ -17,11 +17,11 @@ class Bee: SKSpriteNode, GameSprite {
         createAnimations()
         self.size = size
         self.position = position
-        self.run(flyAnimation)
+        run(flyAnimation)
         
         // add physics engine
-        self.physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2)
-//        self.physicsBody?.affectedByGravity = false
+        physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2)
+        physicsBody?.affectedByGravity = false
     }
     
     // TODO: - Setup onTap function

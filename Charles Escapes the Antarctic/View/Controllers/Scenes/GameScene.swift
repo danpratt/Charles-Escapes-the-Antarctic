@@ -35,6 +35,10 @@ class GameScene: SKScene {
         r2b3.spawn(parentNode: world, position: CGPoint(x: 200, y: 325))
         r2b4.spawn(parentNode: world, position: CGPoint(x: 50, y: 200))
         
+        // start moving r2b2 so it crashes into r2b3
+        r2b2.physicsBody?.mass = 0.2
+        r2b2.physicsBody?.applyImpulse(CGVector(dx: -15, dy: 0))
+        
         // Create the background
         let groundPosition = CGPoint(x: -size.width, y: 100)
         
