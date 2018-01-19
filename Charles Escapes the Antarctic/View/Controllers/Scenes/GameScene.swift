@@ -8,6 +8,7 @@
 
 import SpriteKit
 import GameplayKit
+import CoreMotion
 
 class GameScene: SKScene {
     
@@ -17,6 +18,9 @@ class GameScene: SKScene {
     
     // Create the player
     let player = Player()
+    
+    // CoreMotion Manager
+    let motionManger = CMMotionManager()
     
     override func didMove(to view: SKView) {
         // Set background to sky blue
@@ -35,12 +39,8 @@ class GameScene: SKScene {
         r2b3.spawn(parentNode: world, position: CGPoint(x: 200, y: 325))
         r2b4.spawn(parentNode: world, position: CGPoint(x: 50, y: 200))
         
-        // start moving r2b2 so it crashes into r2b3
-        r2b2.physicsBody?.mass = 0.2
-        r2b2.physicsBody?.applyImpulse(CGVector(dx: -15, dy: 0))
-        
         // Create the background
-        let groundPosition = CGPoint(x: -size.width, y: 100)
+        let groundPosition = CGPoint(x: -size.width, y: 30)
         
         // Set the ground width to be 3 times the size of the screen
         // Height will be set by child nodes
@@ -49,6 +49,9 @@ class GameScene: SKScene {
         
         // add the player
         player.spawn(parentNode: world, position: CGPoint(x: 150, y: 250))
+        
+        // start listening to motion events from accelerometer
+        motionManger.startAccelerometerUpdates()
     }
     
     // MARK: - Physics
@@ -59,6 +62,37 @@ class GameScene: SKScene {
 
         // move the world so the bee stays centered
         world.position = CGPoint(x: worldXPos, y: worldYPos)
+    }
+    
+    // MARK: - Update
+    override func update(_ currentTime: TimeInterval) {
+        player.update()
+        // get acceleromter data
+        guard let accelData = motionManger.accelerometerData else {
+            print("Unable to get acceleromter data")
+            return
+        }
+        
+        var forceAmount: CGFloat
+        var movement = CGVector()
+        
+        // get current orientation
+        switch UIApplication.shared.statusBarOrientation {
+        case .landscapeLeft:
+            forceAmount = 20000
+        case .landscapeRight:
+            forceAmount = -20000
+        default:
+            forceAmount = 0
+        }
+        
+        if accelData.acceleration.y > 0.15 {
+            movement.dx = forceAmount
+        } else if accelData.acceleration.y < -0.15 {
+            movement.dx = -forceAmount
+        }
+        
+        player.physicsBody?.applyForce(movement)
     }
     
     

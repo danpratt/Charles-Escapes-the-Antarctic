@@ -24,6 +24,22 @@ class Player: SKSpriteNode, GameSprite {
         self.position = position
         
         self.run(flyAnimation, withKey: "flapAnimation")
+        
+        // setup physics body
+        // use flying 3 image, because wings are tucked in
+        let bodyTexture = textureAtlas.textureNamed("charles-flying-3")
+        physicsBody = SKPhysicsBody(texture: bodyTexture, size: size)
+        // loses momentum quickly
+        physicsBody?.linearDamping = 0.9
+        // set mass to be close to a real penguin
+        physicsBody?.mass = 30
+        // prevent rotating
+        physicsBody?.allowsRotation = false
+    }
+    
+    // MARK: - Update Function
+    func update() {
+        
     }
     
     // MARK: - OnTap Function
