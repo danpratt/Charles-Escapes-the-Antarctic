@@ -8,6 +8,11 @@
 
 import SpriteKit
 
+enum PenguinAnimation: String {
+    typealias RawValue = String
+    case Soar = "soarAnimation", Fly = "flyAnimation"
+}
+
 class Player: SKSpriteNode, GameSprite {
     
     // Texture Atlas
@@ -17,13 +22,19 @@ class Player: SKSpriteNode, GameSprite {
     var flyAnimation = SKAction()
     var soarAnimation = SKAction()
     
+    // physics control logic
+    var flapping = false
+    let maxFlappingForce: CGFloat = 57000
+    let maxHeight: CGFloat = 1000
+    let maxVelocity: CGFloat = 300
+    
     func spawn(parentNode: SKNode, position: CGPoint, size: CGSize = CGSize(width: 64, height: 64)) {
         parentNode.addChild(self)
         createAnimations()
         self.size = size
         self.position = position
         
-        self.run(flyAnimation, withKey: "flapAnimation")
+        self.run(soarAnimation, withKey: PenguinAnimation.Soar.rawValue)
         
         // setup physics body
         // use flying 3 image, because wings are tucked in
@@ -39,7 +50,26 @@ class Player: SKSpriteNode, GameSprite {
     
     // MARK: - Update Function
     func update() {
+        // add force to push charles higher
+        if flapping {
+            var forceToApply = maxFlappingForce
+            // apply less force if charles is higher than 600
+            if position.y > 600 {
+                let percentageOfMaxHeight = position.y / maxHeight
+                let flappingForceSubtraction = percentageOfMaxHeight * maxFlappingForce
+                forceToApply -= flappingForceSubtraction
+            }
+            // apply the force
+            physicsBody?.applyForce(CGVector(dx: 0, dy: forceToApply))
+        }
         
+        // prevent charles from getting over max height
+        guard let velocityDY = physicsBody?.velocity.dy else {
+            print("Couldn't get velocity")
+            return
+        }
+        
+        physicsBody?.velocity.dy = velocityDY > maxVelocity ? maxVelocity : velocityDY
     }
     
     // MARK: - OnTap Function
@@ -48,7 +78,9 @@ class Player: SKSpriteNode, GameSprite {
         
     }
     
-    // MARK: - CreateAnimations()
+    // MARK: - Animations
+    
+    // MARK: - Create Animations
     private func createAnimations() {
         // rotate up animation
         let rotateUpAction = SKAction.rotate(toAngle: 0, duration: 0.475)
@@ -86,5 +118,19 @@ class Player: SKSpriteNode, GameSprite {
             SKAction.repeatForever(soarAction),
             rotateDownAction
             ])
+    }
+    
+    // MARK: - Start Flapping
+    func startFlapping() {
+        removeAction(forKey: PenguinAnimation.Soar.rawValue)
+        run(flyAnimation, withKey: PenguinAnimation.Fly.rawValue)
+        flapping = true
+    }
+    
+    // MARK: - Stop Flapping
+    func stopFlapping() {
+        removeAction(forKey: PenguinAnimation.Fly.rawValue)
+        run(soarAnimation, withKey: PenguinAnimation.Soar.rawValue)
+        flapping = false
     }
 }

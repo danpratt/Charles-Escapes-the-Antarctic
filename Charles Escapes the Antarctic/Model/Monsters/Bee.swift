@@ -27,7 +27,8 @@ class Bee: SKSpriteNode, GameSprite {
     // TODO: - Setup onTap function
     
     func onTap() {
-        
+        xScale = 4
+        yScale = 4
     }
     
     // Setup the flying animation

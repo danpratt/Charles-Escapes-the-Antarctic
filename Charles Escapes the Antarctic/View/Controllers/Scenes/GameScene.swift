@@ -22,12 +22,18 @@ class GameScene: SKScene {
     // CoreMotion Manager
     let motionManger = CMMotionManager()
     
+    // Screen Center
+    var screenCenterY = CGFloat()
+    
     override func didMove(to view: SKView) {
         // Set background to sky blue
         backgroundColor = UIColor(red: 0.4, green: 0.6, blue: 0.95, alpha: 1.0)
         
         // add the world
         addChild(world)
+        
+        // set screen center
+        screenCenterY = size.height / 2
         
         // add bees from the new class
         let r2b2 = Bee()
@@ -52,16 +58,60 @@ class GameScene: SKScene {
         
         // start listening to motion events from accelerometer
         motionManger.startAccelerometerUpdates()
+        
+        // reduce gravity, since this isn't the real world
+        physicsWorld.gravity = CGVector(dx: 0, dy: -5)
     }
     
     // MARK: - Physics
     override func didSimulatePhysics() {
-        // find the correct position to keep sprite centered
-        let worldXPos = -(player.position.x * world.xScale - (size.width / 2))
-        let worldYPos = -(player.position.y * world.yScale - (size.height / 2))
-
-        // move the world so the bee stays centered
+        var worldYPos: CGFloat = 0
+        
+        // zoom the world as the penguin flies higher
+        if (player.position.y > screenCenterY) {
+            let percentOfMaxHeight = (player.position.y - screenCenterY) / (player.maxHeight - screenCenterY)
+            let scaleSubtraction = (percentOfMaxHeight > 1 ? 1 : percentOfMaxHeight) * 0.6
+            let newScale = 1 - scaleSubtraction
+            print("New world scale is: \(String(describing: newScale))")
+            
+            world.yScale = newScale
+            world.xScale = newScale
+            
+            // adjust the world on the y-axis to follow player
+            worldYPos = -(player.position.y * world.yScale - (size.height / 2))
+        }
+        
+        let worldXPos = -(player.position.x * world.xScale - (size.width / 3))
+        
+        // move camera to new position
         world.position = CGPoint(x: worldXPos, y: worldYPos)
+    }
+    
+    // MARK: - Touch Functions
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // no matter what make the player fly
+        player.startFlapping()
+        
+        for touch in touches {
+            // get location of the touch
+            let location = touch.location(in: self)
+            // locate the node at this location
+            let nodeTouched = nodes(at: location)
+            // check to see if it is a gamekit sprite
+            guard let gameSprite = nodeTouched.first as? GameSprite else {
+                return
+            }
+            // run that node's onTap function
+            gameSprite.onTap()
+        }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        player.stopFlapping()
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        player.stopFlapping()
     }
     
     // MARK: - Update
@@ -69,7 +119,6 @@ class GameScene: SKScene {
         player.update()
         // get acceleromter data
         guard let accelData = motionManger.accelerometerData else {
-            print("Unable to get acceleromter data")
             return
         }
         
