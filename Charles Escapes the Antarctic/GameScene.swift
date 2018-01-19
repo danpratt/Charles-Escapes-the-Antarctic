@@ -11,24 +11,41 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-    private var label : SKLabelNode?
-    private var spinnyNode : SKShapeNode?
+    // Create world node
+    let world = SKNode()
+    // Create bee node
+    let bee = SKSpriteNode()
     
     override func didMove(to view: SKView) {
         // Set background to sky blue
         backgroundColor = UIColor(red: 0.4, green: 0.6, blue: 0.95, alpha: 1.0)
         
-        // create a bee
-        let bee = SKSpriteNode()
-        
+        // add the world
+        addChild(world)
+        // call the new bee function
+        addTheFlyingBee()
+    }
+    
+    // MARK: - Physics
+    override func didSimulatePhysics() {
+        // find the correct position to keep sprite centered
+        let worldXPos = -(bee.position.x * world.xScale - (size.width / 2))
+        let worldYPos = -(bee.position.y * world.yScale - (size.height / 2))
+
+        // move the world so the bee stays centered
+        world.position = CGPoint(x: worldXPos, y: worldYPos)
+    }
+    
+    // MARK: - Bee Node and Animations Setup
+    
+    private func addTheFlyingBee() {
+        // set position
+        bee.position = CGPoint(x: 250, y: 250)
         // set bee size
         bee.size = CGSize(width: 28, height: 24)
         
-        // set position
-        bee.position = CGPoint(x: view.bounds.width / 2, y: view.bounds.height * 0.75)
-        
-        // add bee to scene
-        addChild(bee)
+        // add bee to the world
+        world.addChild(bee)
         
         // setup bee atlas for animation
         let beeAtlas = SKTextureAtlas(named: "bee")
@@ -63,4 +80,6 @@ class GameScene: SKScene {
         // make the bee fly
         bee.run(neverEndingFlight)
     }
+    
+    
 }
