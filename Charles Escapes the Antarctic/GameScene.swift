@@ -42,5 +42,25 @@ class GameScene: SKScene {
         // animate forever
         let beeFlyAction = SKAction.repeatForever(flyAction)
         bee.run(beeFlyAction)
+        
+        // move the bee back and forth
+        
+        // setup paths
+        let pathLeft = SKAction.moveBy(x: -200, y: -10, duration: 2)
+        let pathRight = SKAction.moveBy(x: 200, y: 10, duration: 2)
+        
+        // flip texture around when changing direction
+        let flipTextureNegative = SKAction.scaleX(to: -1, duration: 0.14)
+        let flipTexturePositive = SKAction.scaleX(to: 1, duration: 0.14)
+        
+        // combine actions into flight path
+        let flightOfTheBumbleBee = SKAction.sequence([pathLeft,
+                                                      flipTextureNegative,
+                                                      pathRight, flipTexturePositive
+            ])
+        let neverEndingFlight = SKAction.repeatForever(flightOfTheBumbleBee)
+        
+        // make the bee fly
+        bee.run(neverEndingFlight)
     }
 }
