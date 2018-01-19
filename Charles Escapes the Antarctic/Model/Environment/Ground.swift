@@ -29,6 +29,10 @@ class Ground: SKSpriteNode, GameSprite {
         
         // repeat the texture accross the screen
         createChildren()
+        
+        // setup physics body
+        let pointTopRight = CGPoint(x: size.width, y: 0)
+        self.physicsBody = SKPhysicsBody(edgeFrom: CGPoint.zero, to: pointTopRight)
     }
     
     // OnTap is only here to conform to protocol
