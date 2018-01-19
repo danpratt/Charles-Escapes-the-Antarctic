@@ -17,6 +17,10 @@
 		65A5AD48201147A200A0DA7F /* Charles_Escapes_the_AntarcticTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5AD47201147A200A0DA7F /* Charles_Escapes_the_AntarcticTests.swift */; };
 		65A5AD53201147A200A0DA7F /* Charles_Escapes_the_AntarcticUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5AD52201147A200A0DA7F /* Charles_Escapes_the_AntarcticUITests.swift */; };
 		65A5AD67201164B500A0DA7F /* bee.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 65A5AD66201164B500A0DA7F /* bee.atlas */; };
+		65EEC10F20119F0800CA6CAD /* GameSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EEC10E20119F0800CA6CAD /* GameSprite.swift */; };
+		65EEC1122011A06E00CA6CAD /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EEC1112011A06E00CA6CAD /* Bee.swift */; };
+		65EEC11A2011A67100CA6CAD /* ground.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 65EEC1192011A67100CA6CAD /* ground.atlas */; };
+		65EEC11D2011A70C00CA6CAD /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EEC11C2011A70C00CA6CAD /* Ground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		65A5AD52201147A200A0DA7F /* Charles_Escapes_the_AntarcticUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charles_Escapes_the_AntarcticUITests.swift; sourceTree = "<group>"; };
 		65A5AD54201147A200A0DA7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65A5AD66201164B500A0DA7F /* bee.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bee.atlas; sourceTree = "<group>"; };
+		65EEC10E20119F0800CA6CAD /* GameSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSprite.swift; sourceTree = "<group>"; };
+		65EEC1112011A06E00CA6CAD /* Bee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bee.swift; sourceTree = "<group>"; };
+		65EEC1192011A67100CA6CAD /* ground.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = ground.atlas; sourceTree = "<group>"; };
+		65EEC11C2011A70C00CA6CAD /* Ground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,14 +111,10 @@
 		65A5AD2B201147A100A0DA7F /* Charles Escapes the Antarctic */ = {
 			isa = PBXGroup;
 			children = (
+				65EEC10C20119E6100CA6CAD /* Model */,
 				65A5AD2C201147A100A0DA7F /* AppDelegate.swift */,
 				65A5AD30201147A100A0DA7F /* Actions.sks */,
-				65A5AD32201147A100A0DA7F /* GameScene.swift */,
-				65A5AD34201147A100A0DA7F /* GameViewController.swift */,
-				65A5AD36201147A100A0DA7F /* Main.storyboard */,
-				65A5AD39201147A100A0DA7F /* Assets.xcassets */,
-				65A5AD68201164E300A0DA7F /* Enemies */,
-				65A5AD3B201147A100A0DA7F /* LaunchScreen.storyboard */,
+				65EEC1142011A41100CA6CAD /* View */,
 				65A5AD3E201147A200A0DA7F /* Info.plist */,
 			);
 			path = "Charles Escapes the Antarctic";
@@ -134,12 +138,100 @@
 			path = "Charles Escapes the AntarcticUITests";
 			sourceTree = "<group>";
 		};
-		65A5AD68201164E300A0DA7F /* Enemies */ = {
+		65A5AD68201164E300A0DA7F /* Monsters */ = {
 			isa = PBXGroup;
 			children = (
 				65A5AD66201164B500A0DA7F /* bee.atlas */,
 			);
-			path = Enemies;
+			path = Monsters;
+			sourceTree = "<group>";
+		};
+		65EEC10C20119E6100CA6CAD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				65EEC11B2011A6FA00CA6CAD /* Environment */,
+				65EEC1102011A05D00CA6CAD /* Monsters */,
+				65EEC10D20119EA600CA6CAD /* Protocols */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		65EEC10D20119EA600CA6CAD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				65EEC10E20119F0800CA6CAD /* GameSprite.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		65EEC1102011A05D00CA6CAD /* Monsters */ = {
+			isa = PBXGroup;
+			children = (
+				65EEC1112011A06E00CA6CAD /* Bee.swift */,
+			);
+			path = Monsters;
+			sourceTree = "<group>";
+		};
+		65EEC1132011A3FB00CA6CAD /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				65A5AD32201147A100A0DA7F /* GameScene.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		65EEC1142011A41100CA6CAD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				65EEC1162011A45D00CA6CAD /* Assets */,
+				65EEC1172011A46B00CA6CAD /* Storyboards */,
+				65EEC1152011A41F00CA6CAD /* Controllers */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		65EEC1152011A41F00CA6CAD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				65A5AD34201147A100A0DA7F /* GameViewController.swift */,
+				65EEC1132011A3FB00CA6CAD /* Scenes */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		65EEC1162011A45D00CA6CAD /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				65EEC1182011A66500CA6CAD /* Environment */,
+				65A5AD39201147A100A0DA7F /* Assets.xcassets */,
+				65A5AD68201164E300A0DA7F /* Monsters */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		65EEC1172011A46B00CA6CAD /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				65A5AD36201147A100A0DA7F /* Main.storyboard */,
+				65A5AD3B201147A100A0DA7F /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		65EEC1182011A66500CA6CAD /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				65EEC1192011A67100CA6CAD /* ground.atlas */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		65EEC11B2011A6FA00CA6CAD /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				65EEC11C2011A70C00CA6CAD /* Ground.swift */,
+			);
+			path = Environment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +341,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65EEC11A2011A67100CA6CAD /* ground.atlas in Resources */,
 				65A5AD67201164B500A0DA7F /* bee.atlas in Resources */,
 				65A5AD38201147A100A0DA7F /* Main.storyboard in Resources */,
 				65A5AD3A201147A100A0DA7F /* Assets.xcassets in Resources */,
@@ -278,6 +371,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65EEC11D2011A70C00CA6CAD /* Ground.swift in Sources */,
+				65EEC1122011A06E00CA6CAD /* Bee.swift in Sources */,
+				65EEC10F20119F0800CA6CAD /* GameSprite.swift in Sources */,
 				65A5AD33201147A100A0DA7F /* GameScene.swift in Sources */,
 				65A5AD35201147A100A0DA7F /* GameViewController.swift in Sources */,
 				65A5AD2D201147A100A0DA7F /* AppDelegate.swift in Sources */,

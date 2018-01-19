@@ -11,9 +11,11 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-    // Create world node
+    // Create world
     let world = SKNode()
-    // Create bee node
+    let ground = Ground()
+    
+    // Create a bee
     let bee = SKSpriteNode()
     
     override func didMove(to view: SKView) {
@@ -24,6 +26,25 @@ class GameScene: SKScene {
         addChild(world)
         // call the new bee function
         addTheFlyingBee()
+        
+        // add bees from the new class
+        let r2b2 = Bee()
+        let r2b3 = Bee()
+        let r2b4 = Bee()
+        
+        // spawn the bees
+        r2b2.spawn(parentNode: world, position: CGPoint(x: 325, y: 325))
+        r2b3.spawn(parentNode: world, position: CGPoint(x: 200, y: 325))
+        r2b4.spawn(parentNode: world, position: CGPoint(x: 50, y: 200))
+        
+        // Create the background
+        let groundPosition = CGPoint(x: -size.width, y: 100)
+        
+        // Set the ground width to be 3 times the size of the screen
+        // Height will be set by child nodes
+        let groundSize = CGSize(width: size.width * 3, height: 0)
+        
+        ground.spawn(parentNode: world, position: groundPosition, size: groundSize)
     }
     
     // MARK: - Physics
