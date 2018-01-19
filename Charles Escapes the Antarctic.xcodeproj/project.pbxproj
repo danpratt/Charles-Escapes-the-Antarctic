@@ -21,6 +21,8 @@
 		65EEC1122011A06E00CA6CAD /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EEC1112011A06E00CA6CAD /* Bee.swift */; };
 		65EEC11A2011A67100CA6CAD /* ground.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 65EEC1192011A67100CA6CAD /* ground.atlas */; };
 		65EEC11D2011A70C00CA6CAD /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EEC11C2011A70C00CA6CAD /* Ground.swift */; };
+		65EEC1202011ADB600CA6CAD /* charles.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 65EEC11F2011ADB600CA6CAD /* charles.atlas */; };
+		65EEC1232011AE5300CA6CAD /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EEC1222011AE5300CA6CAD /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		65EEC1112011A06E00CA6CAD /* Bee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bee.swift; sourceTree = "<group>"; };
 		65EEC1192011A67100CA6CAD /* ground.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = ground.atlas; sourceTree = "<group>"; };
 		65EEC11C2011A70C00CA6CAD /* Ground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
+		65EEC11F2011ADB600CA6CAD /* charles.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = charles.atlas; sourceTree = "<group>"; };
+		65EEC1222011AE5300CA6CAD /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +153,7 @@
 		65EEC10C20119E6100CA6CAD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				65EEC1212011AE3D00CA6CAD /* Player */,
 				65EEC11B2011A6FA00CA6CAD /* Environment */,
 				65EEC1102011A05D00CA6CAD /* Monsters */,
 				65EEC10D20119EA600CA6CAD /* Protocols */,
@@ -202,6 +207,7 @@
 		65EEC1162011A45D00CA6CAD /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				65EEC11E2011ADA700CA6CAD /* Player */,
 				65EEC1182011A66500CA6CAD /* Environment */,
 				65A5AD39201147A100A0DA7F /* Assets.xcassets */,
 				65A5AD68201164E300A0DA7F /* Monsters */,
@@ -232,6 +238,22 @@
 				65EEC11C2011A70C00CA6CAD /* Ground.swift */,
 			);
 			path = Environment;
+			sourceTree = "<group>";
+		};
+		65EEC11E2011ADA700CA6CAD /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				65EEC11F2011ADB600CA6CAD /* charles.atlas */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		65EEC1212011AE3D00CA6CAD /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				65EEC1222011AE5300CA6CAD /* Player.swift */,
+			);
+			path = Player;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,6 +363,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65EEC1202011ADB600CA6CAD /* charles.atlas in Resources */,
 				65EEC11A2011A67100CA6CAD /* ground.atlas in Resources */,
 				65A5AD67201164B500A0DA7F /* bee.atlas in Resources */,
 				65A5AD38201147A100A0DA7F /* Main.storyboard in Resources */,
@@ -375,6 +398,7 @@
 				65EEC1122011A06E00CA6CAD /* Bee.swift in Sources */,
 				65EEC10F20119F0800CA6CAD /* GameSprite.swift in Sources */,
 				65A5AD33201147A100A0DA7F /* GameScene.swift in Sources */,
+				65EEC1232011AE5300CA6CAD /* Player.swift in Sources */,
 				65A5AD35201147A100A0DA7F /* GameViewController.swift in Sources */,
 				65A5AD2D201147A100A0DA7F /* AppDelegate.swift in Sources */,
 			);

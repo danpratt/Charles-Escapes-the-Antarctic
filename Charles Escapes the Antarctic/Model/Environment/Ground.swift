@@ -46,9 +46,8 @@ class Ground: SKSpriteNode, GameSprite {
         var tileCount: CGFloat = 0
         let textureSize = texture.size()
         
-        // improve image quality by sizing at half the texture size
-        let tileSize = CGSize(width: textureSize.width / 2, height: textureSize.height / 2)
-        
+        // create a tile size
+        let tileSize = CGSize(width: textureSize.width, height: textureSize.height)
         // cover entire ground with textures
         while tileCount * tileSize.width < self.size.width {
             let tileNode = SKSpriteNode(texture: texture)

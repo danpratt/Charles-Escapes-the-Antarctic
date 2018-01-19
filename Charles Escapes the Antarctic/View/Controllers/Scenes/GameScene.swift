@@ -15,8 +15,8 @@ class GameScene: SKScene {
     let world = SKNode()
     let ground = Ground()
     
-    // Create a bee
-    let bee = SKSpriteNode()
+    // Create the player
+    let player = Player()
     
     override func didMove(to view: SKView) {
         // Set background to sky blue
@@ -24,8 +24,6 @@ class GameScene: SKScene {
         
         // add the world
         addChild(world)
-        // call the new bee function
-        addTheFlyingBee()
         
         // add bees from the new class
         let r2b2 = Bee()
@@ -43,63 +41,20 @@ class GameScene: SKScene {
         // Set the ground width to be 3 times the size of the screen
         // Height will be set by child nodes
         let groundSize = CGSize(width: size.width * 3, height: 0)
-        
         ground.spawn(parentNode: world, position: groundPosition, size: groundSize)
+        
+        // add the player
+        player.spawn(parentNode: world, position: CGPoint(x: 150, y: 250))
     }
     
     // MARK: - Physics
     override func didSimulatePhysics() {
         // find the correct position to keep sprite centered
-        let worldXPos = -(bee.position.x * world.xScale - (size.width / 2))
-        let worldYPos = -(bee.position.y * world.yScale - (size.height / 2))
+        let worldXPos = -(player.position.x * world.xScale - (size.width / 2))
+        let worldYPos = -(player.position.y * world.yScale - (size.height / 2))
 
         // move the world so the bee stays centered
         world.position = CGPoint(x: worldXPos, y: worldYPos)
-    }
-    
-    // MARK: - Bee Node and Animations Setup
-    
-    private func addTheFlyingBee() {
-        // set position
-        bee.position = CGPoint(x: 250, y: 250)
-        // set bee size
-        bee.size = CGSize(width: 28, height: 24)
-        
-        // add bee to the world
-        world.addChild(bee)
-        
-        // setup bee atlas for animation
-        let beeAtlas = SKTextureAtlas(named: "bee")
-        let beeFrames: [SKTexture] = [
-            beeAtlas.textureNamed("bee"),
-            beeAtlas.textureNamed("bee-fly")
-        ]
-        
-        // frames to repeat
-        let flyAction = SKAction.animate(with: beeFrames, timePerFrame: 0.14)
-        // animate forever
-        let beeFlyAction = SKAction.repeatForever(flyAction)
-        bee.run(beeFlyAction)
-        
-        // move the bee back and forth
-        
-        // setup paths
-        let pathLeft = SKAction.moveBy(x: -200, y: -10, duration: 2)
-        let pathRight = SKAction.moveBy(x: 200, y: 10, duration: 2)
-        
-        // flip texture around when changing direction
-        let flipTextureNegative = SKAction.scaleX(to: -1, duration: 0.14)
-        let flipTexturePositive = SKAction.scaleX(to: 1, duration: 0.14)
-        
-        // combine actions into flight path
-        let flightOfTheBumbleBee = SKAction.sequence([pathLeft,
-                                                      flipTextureNegative,
-                                                      pathRight, flipTexturePositive
-            ])
-        let neverEndingFlight = SKAction.repeatForever(flightOfTheBumbleBee)
-        
-        // make the bee fly
-        bee.run(neverEndingFlight)
     }
     
     
