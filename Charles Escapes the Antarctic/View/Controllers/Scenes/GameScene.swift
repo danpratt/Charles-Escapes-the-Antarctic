@@ -8,7 +8,7 @@
 
 import SpriteKit
 import GameplayKit
-import CoreMotion
+//import CoreMotion
 
 class GameScene: SKScene {
     
@@ -19,8 +19,12 @@ class GameScene: SKScene {
     // Create the player
     let player = Player()
     
-    // CoreMotion Manager
-    let motionManger = CMMotionManager()
+    // Player properties for tracking progress
+    let initialPlayerPosition = CGPoint(x: 150, y: 250)
+    var playerProgress = CGFloat()
+    
+//    // CoreMotion Manager
+//    let motionManger = CMMotionManager()
     
     // Screen Center
     var screenCenterY = CGFloat()
@@ -54,10 +58,10 @@ class GameScene: SKScene {
         ground.spawn(parentNode: world, position: groundPosition, size: groundSize)
         
         // add the player
-        player.spawn(parentNode: world, position: CGPoint(x: 150, y: 250))
+        player.spawn(parentNode: world, position: initialPlayerPosition)
         
-        // start listening to motion events from accelerometer
-        motionManger.startAccelerometerUpdates()
+//        // start listening to motion events from accelerometer
+//        motionManger.startAccelerometerUpdates()
         
         // reduce gravity, since this isn't the real world
         physicsWorld.gravity = CGVector(dx: 0, dy: -5)
@@ -72,7 +76,6 @@ class GameScene: SKScene {
             let percentOfMaxHeight = (player.position.y - screenCenterY) / (player.maxHeight - screenCenterY)
             let scaleSubtraction = (percentOfMaxHeight > 1 ? 1 : percentOfMaxHeight) * 0.6
             let newScale = 1 - scaleSubtraction
-            print("New world scale is: \(String(describing: newScale))")
             
             world.yScale = newScale
             world.xScale = newScale
@@ -85,6 +88,12 @@ class GameScene: SKScene {
         
         // move camera to new position
         world.position = CGPoint(x: worldXPos, y: worldYPos)
+        
+        // keep track of progress
+        playerProgress = player.position.x - initialPlayerPosition.x
+        
+        // check to see if ground should be jumped forward
+        ground.checkForReposition(playerProgress: playerProgress)
     }
     
     // MARK: - Touch Functions
@@ -117,31 +126,31 @@ class GameScene: SKScene {
     // MARK: - Update
     override func update(_ currentTime: TimeInterval) {
         player.update()
-        // get acceleromter data
-        guard let accelData = motionManger.accelerometerData else {
-            return
-        }
-        
-        var forceAmount: CGFloat
-        var movement = CGVector()
-        
-        // get current orientation
-        switch UIApplication.shared.statusBarOrientation {
-        case .landscapeLeft:
-            forceAmount = 20000
-        case .landscapeRight:
-            forceAmount = -20000
-        default:
-            forceAmount = 0
-        }
-        
-        if accelData.acceleration.y > 0.15 {
-            movement.dx = forceAmount
-        } else if accelData.acceleration.y < -0.15 {
-            movement.dx = -forceAmount
-        }
-        
-        player.physicsBody?.applyForce(movement)
+//        // get acceleromter data
+//        guard let accelData = motionManger.accelerometerData else {
+//            return
+//        }
+//
+//        var forceAmount: CGFloat
+//        var movement = CGVector()
+//
+//        // get current orientation
+//        switch UIApplication.shared.statusBarOrientation {
+//        case .landscapeLeft:
+//            forceAmount = 20000
+//        case .landscapeRight:
+//            forceAmount = -20000
+//        default:
+//            forceAmount = 0
+//        }
+//
+//        if accelData.acceleration.y > 0.15 {
+//            movement.dx = forceAmount
+//        } else if accelData.acceleration.y < -0.15 {
+//            movement.dx = -forceAmount
+//        }
+//
+//        player.physicsBody?.applyForce(movement)
     }
     
     
