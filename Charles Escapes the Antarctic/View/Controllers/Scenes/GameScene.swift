@@ -15,6 +15,7 @@ class GameScene: SKScene {
     // Create world
     let world = SKNode()
     let ground = Ground()
+    let encounterManager = EncounterManager()
     
     // Create the player
     let player = Player()
@@ -38,6 +39,10 @@ class GameScene: SKScene {
         
         // set screen center
         screenCenterY = size.height / 2
+        
+        // add encounters as children of the world
+        encounterManager.addEncountersToWorld(world: world)
+        encounterManager.encounters.first?.position = CGPoint(x: 300, y: 0)
         
         // Create the background
         let groundPosition = CGPoint(x: -size.width, y: 30)

@@ -34,6 +34,8 @@
 		65EEC1362013CF3D00CA6CAD /* Ghost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EEC1352013CF3D00CA6CAD /* Ghost.swift */; };
 		65EEC1382013D0F000CA6CAD /* Blade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EEC1372013D0F000CA6CAD /* Blade.swift */; };
 		65EEC13A2013D2DC00CA6CAD /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EEC1392013D2DC00CA6CAD /* Coin.swift */; };
+		65EEC13D2013E8CF00CA6CAD /* EncounterBats.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65EEC13C2013E8CF00CA6CAD /* EncounterBats.sks */; };
+		65EEC1402013EBED00CA6CAD /* EncounterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EEC13F2013EBED00CA6CAD /* EncounterManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		65EEC1352013CF3D00CA6CAD /* Ghost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ghost.swift; sourceTree = "<group>"; };
 		65EEC1372013D0F000CA6CAD /* Blade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blade.swift; sourceTree = "<group>"; };
 		65EEC1392013D2DC00CA6CAD /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
+		65EEC13C2013E8CF00CA6CAD /* EncounterBats.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterBats.sks; sourceTree = "<group>"; };
+		65EEC13F2013EBED00CA6CAD /* EncounterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncounterManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +183,7 @@
 		65EEC10C20119E6100CA6CAD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				65EEC13E2013EBD600CA6CAD /* Encounters */,
 				65EEC1212011AE3D00CA6CAD /* Player */,
 				65EEC11B2011A6FA00CA6CAD /* Environment */,
 				65EEC1102011A05D00CA6CAD /* Monsters */,
@@ -210,6 +215,7 @@
 		65EEC1132011A3FB00CA6CAD /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				65EEC13B2013E8A300CA6CAD /* Encounters */,
 				65A5AD32201147A100A0DA7F /* GameScene.swift */,
 			);
 			path = Scenes;
@@ -287,6 +293,22 @@
 				65EEC1222011AE5300CA6CAD /* Player.swift */,
 			);
 			path = Player;
+			sourceTree = "<group>";
+		};
+		65EEC13B2013E8A300CA6CAD /* Encounters */ = {
+			isa = PBXGroup;
+			children = (
+				65EEC13C2013E8CF00CA6CAD /* EncounterBats.sks */,
+			);
+			path = Encounters;
+			sourceTree = "<group>";
+		};
+		65EEC13E2013EBD600CA6CAD /* Encounters */ = {
+			isa = PBXGroup;
+			children = (
+				65EEC13F2013EBED00CA6CAD /* EncounterManager.swift */,
+			);
+			path = Encounters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,6 +420,7 @@
 			files = (
 				65EEC1302013CC2800CA6CAD /* blade.atlas in Resources */,
 				65EEC1202011ADB600CA6CAD /* charles.atlas in Resources */,
+				65EEC13D2013E8CF00CA6CAD /* EncounterBats.sks in Resources */,
 				65EEC11A2011A67100CA6CAD /* ground.atlas in Resources */,
 				65EEC1252013C5F700CA6CAD /* goods.atlas in Resources */,
 				65A5AD67201164B500A0DA7F /* bee.atlas in Resources */,
@@ -433,6 +456,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65EEC11D2011A70C00CA6CAD /* Ground.swift in Sources */,
+				65EEC1402013EBED00CA6CAD /* EncounterManager.swift in Sources */,
 				65EEC1122011A06E00CA6CAD /* Bee.swift in Sources */,
 				65EEC1382013D0F000CA6CAD /* Blade.swift in Sources */,
 				65EEC10F20119F0800CA6CAD /* GameSprite.swift in Sources */,
