@@ -21,7 +21,7 @@ class Star: SKSpriteNode, GameSprite {
         physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2)
         physicsBody?.affectedByGravity = false
         // only one frame, so set it here
-        texture? = textureAtlas.textureNamed("star")
+        texture = textureAtlas.textureNamed("star")
         run(pulseAnimation)
     }
 
