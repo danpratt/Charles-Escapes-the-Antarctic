@@ -121,7 +121,7 @@
 		65A5AD20201147A100A0DA7F = {
 			isa = PBXGroup;
 			children = (
-				65A5AD2B201147A100A0DA7F /* Charles Escapes the Antarctic */,
+				65A5AD2B201147A100A0DA7F /* Flappy Penguin */,
 				65A5AD46201147A200A0DA7F /* Charles Escapes the AntarcticTests */,
 				65A5AD51201147A200A0DA7F /* Charles Escapes the AntarcticUITests */,
 				65A5AD2A201147A100A0DA7F /* Products */,
@@ -138,7 +138,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		65A5AD2B201147A100A0DA7F /* Charles Escapes the Antarctic */ = {
+		65A5AD2B201147A100A0DA7F /* Flappy Penguin */ = {
 			isa = PBXGroup;
 			children = (
 				65EEC10C20119E6100CA6CAD /* Model */,
@@ -147,7 +147,7 @@
 				65EEC1142011A41100CA6CAD /* View */,
 				65A5AD3E201147A200A0DA7F /* Info.plist */,
 			);
-			path = "Charles Escapes the Antarctic";
+			path = "Flappy Penguin";
 			sourceTree = "<group>";
 		};
 		65A5AD46201147A200A0DA7F /* Charles Escapes the AntarcticTests */ = {
@@ -393,7 +393,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 65A5AD24201147A100A0DA7F /* Build configuration list for PBXProject "Charles Escapes the Antarctic" */;
+			buildConfigurationList = 65A5AD24201147A100A0DA7F /* Build configuration list for PBXProject "Flappy Penguin" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -636,9 +636,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZJ769HHQS2;
-				INFOPLIST_FILE = "Charles Escapes the Antarctic/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Flappy Penguin/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.blaumagier.Charles-Escapes-the-Antarctic";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blaumagier.Flappy-Penguin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -651,9 +651,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZJ769HHQS2;
-				INFOPLIST_FILE = "Charles Escapes the Antarctic/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Flappy Penguin/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.blaumagier.Charles-Escapes-the-Antarctic";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blaumagier.Flappy-Penguin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -729,7 +729,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		65A5AD24201147A100A0DA7F /* Build configuration list for PBXProject "Charles Escapes the Antarctic" */ = {
+		65A5AD24201147A100A0DA7F /* Build configuration list for PBXProject "Flappy Penguin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				65A5AD55201147A200A0DA7F /* Debug */,
