@@ -41,11 +41,6 @@ class Ground: SKSpriteNode, GameSprite {
         physicsBody = SKPhysicsBody(edgeFrom: CGPoint.zero, to: pointTopRight)
     }
     
-    // OnTap is only here to conform to protocol
-    func onTap() {
-        
-    }
-    
     // MARK: - CreateChildren
     private func createChildren() {
         // make sure there is a texture loaded
@@ -87,5 +82,8 @@ class Ground: SKSpriteNode, GameSprite {
         }
     }
     
+    func onTap() {
+        
+    }
     
 }

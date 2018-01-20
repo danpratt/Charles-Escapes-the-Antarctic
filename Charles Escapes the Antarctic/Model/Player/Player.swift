@@ -34,7 +34,7 @@ class Player: SKSpriteNode, GameSprite {
         self.size = size
         self.position = position
         
-        self.run(soarAnimation, withKey: PenguinAnimation.Soar.rawValue)
+        run(soarAnimation, withKey: PenguinAnimation.Soar.rawValue)
         
         // setup physics body
         // use flying 3 image, because wings are tucked in
@@ -70,7 +70,7 @@ class Player: SKSpriteNode, GameSprite {
         }
         
         physicsBody?.velocity.dy = velocityDY > maxVelocity ? maxVelocity : velocityDY
-        physicsBody?.velocity.dx = 200
+//        physicsBody?.velocity.dx = 200
     }
     
     // MARK: - OnTap Function

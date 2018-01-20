@@ -23,6 +23,17 @@
 		65EEC11D2011A70C00CA6CAD /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EEC11C2011A70C00CA6CAD /* Ground.swift */; };
 		65EEC1202011ADB600CA6CAD /* charles.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 65EEC11F2011ADB600CA6CAD /* charles.atlas */; };
 		65EEC1232011AE5300CA6CAD /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EEC1222011AE5300CA6CAD /* Player.swift */; };
+		65EEC1252013C5F700CA6CAD /* goods.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 65EEC1242013C5F700CA6CAD /* goods.atlas */; };
+		65EEC1282013C74400CA6CAD /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EEC1272013C74400CA6CAD /* Star.swift */; };
+		65EEC12A2013CB9600CA6CAD /* MadFly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EEC1292013CB9600CA6CAD /* MadFly.swift */; };
+		65EEC12C2013CC0600CA6CAD /* madfly.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 65EEC12B2013CC0600CA6CAD /* madfly.atlas */; };
+		65EEC12F2013CC2800CA6CAD /* bat.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 65EEC12D2013CC2800CA6CAD /* bat.atlas */; };
+		65EEC1302013CC2800CA6CAD /* blade.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 65EEC12E2013CC2800CA6CAD /* blade.atlas */; };
+		65EEC1322013CD5A00CA6CAD /* Bat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EEC1312013CD5A00CA6CAD /* Bat.swift */; };
+		65EEC1342013CF2C00CA6CAD /* ghost.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 65EEC1332013CF2C00CA6CAD /* ghost.atlas */; };
+		65EEC1362013CF3D00CA6CAD /* Ghost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EEC1352013CF3D00CA6CAD /* Ghost.swift */; };
+		65EEC1382013D0F000CA6CAD /* Blade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EEC1372013D0F000CA6CAD /* Blade.swift */; };
+		65EEC13A2013D2DC00CA6CAD /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EEC1392013D2DC00CA6CAD /* Coin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +76,17 @@
 		65EEC11C2011A70C00CA6CAD /* Ground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
 		65EEC11F2011ADB600CA6CAD /* charles.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = charles.atlas; sourceTree = "<group>"; };
 		65EEC1222011AE5300CA6CAD /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		65EEC1242013C5F700CA6CAD /* goods.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = goods.atlas; sourceTree = "<group>"; };
+		65EEC1272013C74400CA6CAD /* Star.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
+		65EEC1292013CB9600CA6CAD /* MadFly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MadFly.swift; sourceTree = "<group>"; };
+		65EEC12B2013CC0600CA6CAD /* madfly.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = madfly.atlas; sourceTree = "<group>"; };
+		65EEC12D2013CC2800CA6CAD /* bat.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bat.atlas; sourceTree = "<group>"; };
+		65EEC12E2013CC2800CA6CAD /* blade.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = blade.atlas; sourceTree = "<group>"; };
+		65EEC1312013CD5A00CA6CAD /* Bat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bat.swift; sourceTree = "<group>"; };
+		65EEC1332013CF2C00CA6CAD /* ghost.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = ghost.atlas; sourceTree = "<group>"; };
+		65EEC1352013CF3D00CA6CAD /* Ghost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ghost.swift; sourceTree = "<group>"; };
+		65EEC1372013D0F000CA6CAD /* Blade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blade.swift; sourceTree = "<group>"; };
+		65EEC1392013D2DC00CA6CAD /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +167,11 @@
 		65A5AD68201164E300A0DA7F /* Monsters */ = {
 			isa = PBXGroup;
 			children = (
+				65EEC12D2013CC2800CA6CAD /* bat.atlas */,
 				65A5AD66201164B500A0DA7F /* bee.atlas */,
+				65EEC12E2013CC2800CA6CAD /* blade.atlas */,
+				65EEC1332013CF2C00CA6CAD /* ghost.atlas */,
+				65EEC12B2013CC0600CA6CAD /* madfly.atlas */,
 			);
 			path = Monsters;
 			sourceTree = "<group>";
@@ -173,6 +199,10 @@
 			isa = PBXGroup;
 			children = (
 				65EEC1112011A06E00CA6CAD /* Bee.swift */,
+				65EEC1292013CB9600CA6CAD /* MadFly.swift */,
+				65EEC1312013CD5A00CA6CAD /* Bat.swift */,
+				65EEC1352013CF3D00CA6CAD /* Ghost.swift */,
+				65EEC1372013D0F000CA6CAD /* Blade.swift */,
 			);
 			path = Monsters;
 			sourceTree = "<group>";
@@ -227,6 +257,7 @@
 		65EEC1182011A66500CA6CAD /* Environment */ = {
 			isa = PBXGroup;
 			children = (
+				65EEC1242013C5F700CA6CAD /* goods.atlas */,
 				65EEC1192011A67100CA6CAD /* ground.atlas */,
 			);
 			path = Environment;
@@ -236,6 +267,8 @@
 			isa = PBXGroup;
 			children = (
 				65EEC11C2011A70C00CA6CAD /* Ground.swift */,
+				65EEC1272013C74400CA6CAD /* Star.swift */,
+				65EEC1392013D2DC00CA6CAD /* Coin.swift */,
 			);
 			path = Environment;
 			sourceTree = "<group>";
@@ -363,13 +396,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65EEC1302013CC2800CA6CAD /* blade.atlas in Resources */,
 				65EEC1202011ADB600CA6CAD /* charles.atlas in Resources */,
 				65EEC11A2011A67100CA6CAD /* ground.atlas in Resources */,
+				65EEC1252013C5F700CA6CAD /* goods.atlas in Resources */,
 				65A5AD67201164B500A0DA7F /* bee.atlas in Resources */,
 				65A5AD38201147A100A0DA7F /* Main.storyboard in Resources */,
+				65EEC12F2013CC2800CA6CAD /* bat.atlas in Resources */,
 				65A5AD3A201147A100A0DA7F /* Assets.xcassets in Resources */,
 				65A5AD3D201147A100A0DA7F /* LaunchScreen.storyboard in Resources */,
 				65A5AD31201147A100A0DA7F /* Actions.sks in Resources */,
+				65EEC12C2013CC0600CA6CAD /* madfly.atlas in Resources */,
+				65EEC1342013CF2C00CA6CAD /* ghost.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,11 +434,17 @@
 			files = (
 				65EEC11D2011A70C00CA6CAD /* Ground.swift in Sources */,
 				65EEC1122011A06E00CA6CAD /* Bee.swift in Sources */,
+				65EEC1382013D0F000CA6CAD /* Blade.swift in Sources */,
 				65EEC10F20119F0800CA6CAD /* GameSprite.swift in Sources */,
 				65A5AD33201147A100A0DA7F /* GameScene.swift in Sources */,
+				65EEC1362013CF3D00CA6CAD /* Ghost.swift in Sources */,
 				65EEC1232011AE5300CA6CAD /* Player.swift in Sources */,
+				65EEC1322013CD5A00CA6CAD /* Bat.swift in Sources */,
+				65EEC13A2013D2DC00CA6CAD /* Coin.swift in Sources */,
 				65A5AD35201147A100A0DA7F /* GameViewController.swift in Sources */,
 				65A5AD2D201147A100A0DA7F /* AppDelegate.swift in Sources */,
+				65EEC12A2013CB9600CA6CAD /* MadFly.swift in Sources */,
+				65EEC1282013C74400CA6CAD /* Star.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
