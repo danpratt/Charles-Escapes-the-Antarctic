@@ -39,35 +39,6 @@ class GameScene: SKScene {
         // set screen center
         screenCenterY = size.height / 2
         
-        // MARK: - Testing Objects
-        
-        // add objects
-        let r2b2 = Bee()
-        let r2b3 = Bee()
-        let r2b4 = Bee()
-        let bat = Bat()
-        let blade = Blade()
-        let madFly = MadFly()
-        let bronzeCoin = Coin()
-        let goldCoin = Coin()
-        let ghost = Ghost()
-        let star = Star()
-        
-        // spawn objects
-        r2b2.spawn(parentNode: world, position: CGPoint(x: 325, y: 325))
-        r2b3.spawn(parentNode: world, position: CGPoint(x: 200, y: 325))
-        r2b4.spawn(parentNode: world, position: CGPoint(x: 50, y: 200))
-        bat.spawn(parentNode: world, position: CGPoint(x: 400, y: 200))
-        blade.spawn(parentNode: world, position: CGPoint(x: 300, y: 76))
-        madFly.spawn(parentNode: world, position: CGPoint(x: 50, y: 50))
-        bronzeCoin.spawn(parentNode: world, position: CGPoint(x: 490, y: 250))
-        goldCoin.spawn(parentNode: world, position: CGPoint(x: 460, y: 250))
-        goldCoin.turnToGold()
-        ghost.spawn(parentNode: world, position: CGPoint(x: 50, y: 300))
-        star.spawn(parentNode: world, position: CGPoint(x: 250, y: 250))
-        
-        // MARK: - End of test area
-        
         // Create the background
         let groundPosition = CGPoint(x: -size.width, y: 30)
         
