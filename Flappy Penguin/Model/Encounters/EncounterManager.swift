@@ -143,6 +143,7 @@ class EncounterManager {
                 fatalError("No initial position value exists")
             }
             sprite.position = initialPositionValue.cgPointValue
+            sprite.setScale(1)
             
             // reset any children of this node as well
             resetSpritePositions(node: sprite)

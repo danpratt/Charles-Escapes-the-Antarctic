@@ -16,6 +16,7 @@ class GameScene: SKScene {
     let world = SKNode()
     let ground = Ground()
     let encounterManager = EncounterManager()
+    let powerUpStar = Star()
     
     // Create the player
     let player = Player()
@@ -60,6 +61,9 @@ class GameScene: SKScene {
         
         // reduce gravity, since this isn't the real world
         physicsWorld.gravity = CGVector(dx: 0, dy: -5)
+        
+        // spawn the star off screen
+        powerUpStar.spawn(parentNode: world, position: CGPoint(x: -2000, y: -2000))
     }
     
     // MARK: - Physics
@@ -93,7 +97,19 @@ class GameScene: SKScene {
         // check to see if we need a new encounter
         if player.position.x > nextEncounterSpawnPosition {
             encounterManager.placeNextEncounter(currentXPosition: nextEncounterSpawnPosition)
-            nextEncounterSpawnPosition += 1600
+            nextEncounterSpawnPosition += 1400
+            
+            // check to see if we should randomly generate a star
+            let starRoll = Int(arc4random_uniform(10))
+            if starRoll == 0 {
+                // check to make sure star is not already on screen
+                if abs(player.position.x - powerUpStar.position.x) > 1200 {
+                    let randomYPos = CGFloat(arc4random_uniform(400))
+                    powerUpStar.position = CGPoint(x: nextEncounterSpawnPosition, y: randomYPos)
+                    powerUpStar.physicsBody?.angularVelocity = 0
+                    powerUpStar.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+                }
+            }
         }
     }
     
