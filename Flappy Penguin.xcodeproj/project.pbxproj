@@ -34,8 +34,10 @@
 		65EEC1362013CF3D00CA6CAD /* Ghost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EEC1352013CF3D00CA6CAD /* Ghost.swift */; };
 		65EEC1382013D0F000CA6CAD /* Blade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EEC1372013D0F000CA6CAD /* Blade.swift */; };
 		65EEC13A2013D2DC00CA6CAD /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EEC1392013D2DC00CA6CAD /* Coin.swift */; };
-		65EEC13D2013E8CF00CA6CAD /* EncounterBats.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65EEC13C2013E8CF00CA6CAD /* EncounterBats.sks */; };
 		65EEC1402013EBED00CA6CAD /* EncounterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EEC13F2013EBED00CA6CAD /* EncounterManager.swift */; };
+		65EF4F65201522F200CC6E71 /* EncounterBats.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65EF4F62201522F200CC6E71 /* EncounterBats.sks */; };
+		65EF4F66201522F200CC6E71 /* EncounterBees.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65EF4F63201522F200CC6E71 /* EncounterBees.sks */; };
+		65EF4F67201522F200CC6E71 /* EncounterCoins.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65EF4F64201522F200CC6E71 /* EncounterCoins.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,8 +91,10 @@
 		65EEC1352013CF3D00CA6CAD /* Ghost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ghost.swift; sourceTree = "<group>"; };
 		65EEC1372013D0F000CA6CAD /* Blade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blade.swift; sourceTree = "<group>"; };
 		65EEC1392013D2DC00CA6CAD /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
-		65EEC13C2013E8CF00CA6CAD /* EncounterBats.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterBats.sks; sourceTree = "<group>"; };
 		65EEC13F2013EBED00CA6CAD /* EncounterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncounterManager.swift; sourceTree = "<group>"; };
+		65EF4F62201522F200CC6E71 /* EncounterBats.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterBats.sks; sourceTree = "<group>"; };
+		65EF4F63201522F200CC6E71 /* EncounterBees.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterBees.sks; sourceTree = "<group>"; };
+		65EF4F64201522F200CC6E71 /* EncounterCoins.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterCoins.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,7 +220,6 @@
 			isa = PBXGroup;
 			children = (
 				65EEC13B2013E8A300CA6CAD /* Encounters */,
-				65A5AD32201147A100A0DA7F /* GameScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 		65EEC1142011A41100CA6CAD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				65EEC1132011A3FB00CA6CAD /* Scenes */,
 				65EEC1162011A45D00CA6CAD /* Assets */,
 				65EEC1172011A46B00CA6CAD /* Storyboards */,
 				65EEC1152011A41F00CA6CAD /* Controllers */,
@@ -235,7 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				65A5AD34201147A100A0DA7F /* GameViewController.swift */,
-				65EEC1132011A3FB00CA6CAD /* Scenes */,
+				65A5AD32201147A100A0DA7F /* GameScene.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -298,7 +302,9 @@
 		65EEC13B2013E8A300CA6CAD /* Encounters */ = {
 			isa = PBXGroup;
 			children = (
-				65EEC13C2013E8CF00CA6CAD /* EncounterBats.sks */,
+				65EF4F62201522F200CC6E71 /* EncounterBats.sks */,
+				65EF4F63201522F200CC6E71 /* EncounterBees.sks */,
+				65EF4F64201522F200CC6E71 /* EncounterCoins.sks */,
 			);
 			path = Encounters;
 			sourceTree = "<group>";
@@ -420,17 +426,19 @@
 			files = (
 				65EEC1302013CC2800CA6CAD /* blade.atlas in Resources */,
 				65EEC1202011ADB600CA6CAD /* charles.atlas in Resources */,
-				65EEC13D2013E8CF00CA6CAD /* EncounterBats.sks in Resources */,
+				65EF4F65201522F200CC6E71 /* EncounterBats.sks in Resources */,
 				65EEC11A2011A67100CA6CAD /* ground.atlas in Resources */,
 				65EEC1252013C5F700CA6CAD /* goods.atlas in Resources */,
 				65A5AD67201164B500A0DA7F /* bee.atlas in Resources */,
 				65A5AD38201147A100A0DA7F /* Main.storyboard in Resources */,
 				65EEC12F2013CC2800CA6CAD /* bat.atlas in Resources */,
+				65EF4F66201522F200CC6E71 /* EncounterBees.sks in Resources */,
 				65A5AD3A201147A100A0DA7F /* Assets.xcassets in Resources */,
 				65A5AD3D201147A100A0DA7F /* LaunchScreen.storyboard in Resources */,
 				65A5AD31201147A100A0DA7F /* Actions.sks in Resources */,
 				65EEC12C2013CC0600CA6CAD /* madfly.atlas in Resources */,
 				65EEC1342013CF2C00CA6CAD /* ghost.atlas in Resources */,
+				65EF4F67201522F200CC6E71 /* EncounterCoins.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,6 +23,7 @@ class GameScene: SKScene {
     // Player properties for tracking progress
     let initialPlayerPosition = CGPoint(x: 150, y: 250)
     var playerProgress = CGFloat()
+    var nextEncounterSpawnPosition: CGFloat = 150
     
 //    // CoreMotion Manager
 //    let motionManger = CMMotionManager()
@@ -42,7 +43,6 @@ class GameScene: SKScene {
         
         // add encounters as children of the world
         encounterManager.addEncountersToWorld(world: world)
-        encounterManager.encounters.first?.position = CGPoint(x: 300, y: 0)
         
         // Create the background
         let groundPosition = CGPoint(x: -size.width, y: 30)
@@ -89,6 +89,12 @@ class GameScene: SKScene {
         
         // check to see if ground should be jumped forward
         ground.checkForReposition(playerProgress: playerProgress)
+        
+        // check to see if we need a new encounter
+        if player.position.x > nextEncounterSpawnPosition {
+            encounterManager.placeNextEncounter(currentXPosition: nextEncounterSpawnPosition)
+            nextEncounterSpawnPosition += 1600
+        }
     }
     
     // MARK: - Touch Functions

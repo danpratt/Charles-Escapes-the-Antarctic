@@ -70,7 +70,7 @@ class Player: SKSpriteNode, GameSprite {
         }
         
         physicsBody?.velocity.dy = velocityDY > maxVelocity ? maxVelocity : velocityDY
-//        physicsBody?.velocity.dx = 200
+        physicsBody?.velocity.dx = 200
     }
     
     // MARK: - OnTap Function
