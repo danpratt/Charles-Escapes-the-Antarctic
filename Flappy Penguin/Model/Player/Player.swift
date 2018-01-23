@@ -21,12 +21,20 @@ class Player: SKSpriteNode, GameSprite {
     // Animations
     var flyAnimation = SKAction()
     var soarAnimation = SKAction()
+    var damageAnimation = SKAction()
+    var dieAnimation = SKAction()
     
     // physics control logic
     var flapping = false
     let maxFlappingForce: CGFloat = 57000
     let maxHeight: CGFloat = 1000
     let maxVelocity: CGFloat = 300
+    var forwardVelocity: CGFloat = 200
+    
+    // player health
+    var health: Int = 3
+    var isGodModeOn = false
+    var isDamaged = false
     
     func spawn(parentNode: SKNode, position: CGPoint, size: CGSize = CGSize(width: 64, height: 64)) {
         parentNode.addChild(self)
@@ -72,7 +80,7 @@ class Player: SKSpriteNode, GameSprite {
         }
         
         physicsBody?.velocity.dy = velocityDY > maxVelocity ? maxVelocity : velocityDY
-        physicsBody?.velocity.dx = 200
+        physicsBody?.velocity.dx = forwardVelocity
     }
     
     // MARK: - OnTap Function
@@ -121,10 +129,78 @@ class Player: SKSpriteNode, GameSprite {
             SKAction.repeatForever(soarAction),
             rotateDownAction
             ])
+        
+        // --- create taking damage animation ---
+        let damageStart = SKAction.run {
+            // allow penguin to pass through enemies
+            self.physicsBody?.categoryBitMask = PhysicsCategory.damagedPenguin.rawValue
+            // remove enemies from collision test
+            self.physicsBody?.collisionBitMask = ~PhysicsCategory.enemy.rawValue
+            // create a pulse that is slow in the beginning and fast in the end
+        }
+        let slowFade = SKAction.sequence([
+                SKAction.fadeAlpha(to: 0.3, duration: 0.35),
+                SKAction.fadeAlpha(to: 0.7, duration: 0.35)
+            ])
+        let fastFade = SKAction.sequence([
+                SKAction.fadeAlpha(to: 0.3, duration: 0.2),
+                SKAction.fadeAlpha(to: 0.7, duration: 0.2)
+            ])
+        let fadeOutAndIn = SKAction.sequence([
+                SKAction.repeat(slowFade, count: 2),
+                SKAction.repeat(fastFade, count: 5),
+                SKAction.fadeAlpha(to: 1, duration: 0.15)
+            ])
+        
+        let damageEnd = SKAction.run {
+            // change back to normal penguin
+            self.physicsBody?.categoryBitMask = PhysicsCategory.penguin.rawValue
+            // collide with everything again
+            self.physicsBody?.collisionBitMask = 0xFFFFFFFF
+            // turn off the newly damaged flag
+            self.isDamaged = false
+        }
+        
+        // set the whole sequence to the damage animation property
+        damageAnimation = SKAction.sequence([
+                damageStart,
+                fadeOutAndIn,
+                damageEnd
+            ])
+        
+        // -- Create death animation ---
+        let startDie = SKAction.run {
+            // Switch to death image
+            self.texture = self.textureAtlas.textureNamed("charles-dead")
+            // Freeze charles in space
+            self.physicsBody?.affectedByGravity = false
+            // stop any movement
+            self.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+            // make charles pass through everything but the ground
+            self.physicsBody?.collisionBitMask = PhysicsCategory.ground.rawValue
+        }
+        
+        let endDie = SKAction.run {
+            // turn gravity back on
+            self.physicsBody?.affectedByGravity = true
+        }
+        
+        dieAnimation = SKAction.sequence([
+                startDie,
+                // scale charles to be bigger
+                SKAction.scale(to: 1.3, duration: 0.5),
+                // wait for it...
+                SKAction.wait(forDuration: 0.5),
+                // rotate charles onto his back
+                SKAction.rotate(toAngle: 3, duration: 0.2),
+                SKAction.wait(forDuration: 0.5),
+                endDie
+            ])
     }
     
     // MARK: - Start Flapping
     func startFlapping() {
+        if self.health <= 0 { return }
         removeAction(forKey: PenguinAnimation.Soar.rawValue)
         run(flyAnimation, withKey: PenguinAnimation.Fly.rawValue)
         flapping = true
@@ -132,8 +208,42 @@ class Player: SKSpriteNode, GameSprite {
     
     // MARK: - Stop Flapping
     func stopFlapping() {
+        if self.health <= 0 { return }
         removeAction(forKey: PenguinAnimation.Fly.rawValue)
         run(soarAnimation, withKey: PenguinAnimation.Soar.rawValue)
         flapping = false
+    }
+    
+    // MARK: - Player Dies
+    private func die() {
+        print("You have died")
+        // make sure player is fully visible
+        alpha = 1
+        // remove all animations
+        removeAllActions()
+        // run die animation
+        run(dieAnimation)
+        // stop any further movement
+        flapping = false
+        forwardVelocity = 0
+    }
+    
+    // MARK: - Taking Damage
+    func takeDamage() {
+        // if in god mode or damaged, just return
+        if isGodModeOn || isDamaged { return }
+        
+        // set damaged state to true
+        isDamaged = true
+        
+        // remove 1 health
+        health -= 1
+        
+        // check to see if player died
+        if health <= 0 {
+            die()
+        } else {
+            run(damageAnimation)
+        }
     }
 }
