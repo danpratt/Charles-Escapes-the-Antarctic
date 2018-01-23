@@ -57,6 +57,32 @@ class Star: SKSpriteNode, GameSprite {
     func onTap() {
     }
     
-    
+    func collectStar() {
+        // prevent further contact
+        physicsBody?.categoryBitMask = 0
+        // collect coin animation
+        let collectAnimation = SKAction.group([
+            SKAction.fadeAlpha(to: 0, duration: 0.2),
+            SKAction.scale(to: 1.5, duration: 0.2),
+            SKAction.move(by: CGVector(dx: 0, dy: 25), duration: 0.2)
+            ])
+        
+        // move coin out of the way and reset to inital value until reused by enounter system
+        let resetAfterCollected = SKAction.run {
+            self.position.y = 5000
+            self.alpha = 1
+            self.xScale = 1
+            self.yScale = 1
+            self.physicsBody?.categoryBitMask = PhysicsCategory.powerup.rawValue
+        }
+        
+        // combine into sequence
+        let collectSequence = SKAction.sequence([
+            collectAnimation,
+            resetAfterCollected
+            ])
+        // run collection
+        run(collectSequence)
+    }
     
 }

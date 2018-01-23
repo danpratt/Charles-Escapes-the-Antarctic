@@ -17,11 +17,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let ground = Ground()
     let encounterManager = EncounterManager()
     let powerUpStar = Star()
+    var backgrounds: [Background] = []
     
     // Create the player
     let player = Player()
     
     // Player properties for tracking progress
+    let hud = HUD()
     let initialPlayerPosition = CGPoint(x: 150, y: 250)
     var playerProgress = CGFloat()
     var nextEncounterSpawnPosition: CGFloat = 150
@@ -48,7 +50,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // add encounters as children of the world
         encounterManager.addEncountersToWorld(world: world)
         
-        // Create the background
+        // Create the ground
         let groundPosition = CGPoint(x: -size.width, y: 30)
         
         // Set the ground width to be 3 times the size of the screen
@@ -70,6 +72,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // spawn the star off screen
         powerUpStar.spawn(parentNode: world, position: CGPoint(x: -2000, y: -2000))
+        
+        // create hud for tracking life and score
+        hud.createHUDNodes(screenSize: size)
+        addChild(hud)
+        // make sure hud stays above everything else
+        hud.zPosition = 50
+        
+        // add 4 backgrounds to the array
+        for _ in 0..<4 {
+            backgrounds.append(Background())
+        }
+        
+        // spawn the new backgrounds
+        backgrounds[0].spawn(parentNode: world, imageName: "Background-1", zPosition: -5, movementMultiplier: 0.75)
+        backgrounds[1].spawn(parentNode: world, imageName: "Background-2", zPosition: -10, movementMultiplier: 0.5)
+        backgrounds[2].spawn(parentNode: world, imageName: "Background-3", zPosition: -15, movementMultiplier: 0.2)
+        backgrounds[3].spawn(parentNode: world, imageName: "Background-4", zPosition: -20, movementMultiplier: 0.1)
     }
     
     // MARK: - Physics
@@ -116,6 +135,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     powerUpStar.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
                 }
             }
+        }
+        
+        // update background
+        for background in backgrounds {
+            background.updatePosition(playerProgress: playerProgress)
         }
     }
     
@@ -188,18 +212,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         case PhysicsCategory.ground.rawValue:
             print("Hit the ground!")
             player.takeDamage()
+            hud.setHealthDisplay(newHealth: player.health)
         case PhysicsCategory.enemy.rawValue:
             print("Taking damage!")
             player.takeDamage()
+            hud.setHealthDisplay(newHealth: player.health)
         case PhysicsCategory.coin.rawValue:
             print("Grabbing coin!")
             guard let coin = otherBody.node as? Coin else { return }
             coin.collect()
             coinsCollected += coin.value
+            hud.setScoreDisplay(newCoinCount: coinsCollected)
             print("You have collected: \(String(describing: coinsCollected))")
         case PhysicsCategory.powerup.rawValue:
             print("Grabbing a star!")
             player.superStar()
+            guard let star = otherBody.node as? Star else { return }
+            star.collectStar()
+            
         default:
             print("Probably grabbing a coin after it has been picked up")
         }
