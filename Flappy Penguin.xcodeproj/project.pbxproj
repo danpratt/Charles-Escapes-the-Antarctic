@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65796C292016CCA500E415B6 /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65796C282016CCA500E415B6 /* PhysicsCategory.swift */; };
 		65A5AD2D201147A100A0DA7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5AD2C201147A100A0DA7F /* AppDelegate.swift */; };
 		65A5AD31201147A100A0DA7F /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65A5AD30201147A100A0DA7F /* Actions.sks */; };
 		65A5AD33201147A100A0DA7F /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5AD32201147A100A0DA7F /* GameScene.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		65796C282016CCA500E415B6 /* PhysicsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
 		65A5AD29201147A100A0DA7F /* Charles Escapes the Antarctic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Charles Escapes the Antarctic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A5AD2C201147A100A0DA7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65A5AD30201147A100A0DA7F /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				65EEC11B2011A6FA00CA6CAD /* Environment */,
 				65EEC1102011A05D00CA6CAD /* Monsters */,
 				65EEC10D20119EA600CA6CAD /* Protocols */,
+				65796C282016CCA500E415B6 /* PhysicsCategory.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				65EEC13A2013D2DC00CA6CAD /* Coin.swift in Sources */,
 				65A5AD35201147A100A0DA7F /* GameViewController.swift in Sources */,
 				65A5AD2D201147A100A0DA7F /* AppDelegate.swift in Sources */,
+				65796C292016CCA500E415B6 /* PhysicsCategory.swift in Sources */,
 				65EEC12A2013CB9600CA6CAD /* MadFly.swift in Sources */,
 				65EEC1282013C74400CA6CAD /* Star.swift in Sources */,
 			);

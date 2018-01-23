@@ -18,6 +18,8 @@ class Blade: SKSpriteNode, GameSprite {
         self.position = position
         physicsBody = SKPhysicsBody(texture: textureAtlas.textureNamed("blade"), size: size)
         physicsBody?.affectedByGravity = false
+        physicsBody?.categoryBitMask = PhysicsCategory.enemy.rawValue
+        physicsBody?.collisionBitMask = ~PhysicsCategory.damagedPenguin.rawValue
         // not dynamic because it should never move
         physicsBody?.isDynamic = false
         createAnimations()

@@ -23,6 +23,8 @@ class Coin: SKSpriteNode, GameSprite {
         // setup phyiscs
         physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2)
         physicsBody?.affectedByGravity = false
+        physicsBody?.categoryBitMask = PhysicsCategory.coin.rawValue
+        physicsBody?.collisionBitMask = 0
         
         // set default texture to bronze coin
         texture = textureAtlas.textureNamed("coin-bronze")

@@ -10,7 +10,7 @@ import SpriteKit
 import GameplayKit
 //import CoreMotion
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // Create world
     let world = SKNode()
@@ -59,8 +59,11 @@ class GameScene: SKScene {
 //        // start listening to motion events from accelerometer
 //        motionManger.startAccelerometerUpdates()
         
+        // Setup physics world
         // reduce gravity, since this isn't the real world
         physicsWorld.gravity = CGVector(dx: 0, dy: -5)
+        // enable contact delegate
+        physicsWorld.contactDelegate = self
         
         // spawn the star off screen
         powerUpStar.spawn(parentNode: world, position: CGPoint(x: -2000, y: -2000))
@@ -170,5 +173,26 @@ class GameScene: SKScene {
 //        player.physicsBody?.applyForce(movement)
     }
     
+    // MARK: - Contact Delegate Functions
+    func didBegin(_ contact: SKPhysicsContact) {
+        // find contact bodies
+        let otherBody: SKPhysicsBody
+        let penguinMask = PhysicsCategory.penguin.rawValue | PhysicsCategory.damagedPenguin.rawValue
+        // figure out which body is the penguin
+        otherBody = (contact.bodyA.categoryBitMask & penguinMask) > 0 ? contact.bodyB : contact.bodyA
+        // discover contact type
+        switch otherBody.categoryBitMask {
+        case PhysicsCategory.ground.rawValue:
+            print("Hit the ground!")
+        case PhysicsCategory.enemy.rawValue:
+            print("Taking damage!")
+        case PhysicsCategory.coin.rawValue:
+            print("Grabbing coin!")
+        case PhysicsCategory.powerup.rawValue:
+            print("Grabbing a star!")
+        default:
+            fatalError("Unable to find category bitmask, check game logic")
+        }
+    }
     
 }

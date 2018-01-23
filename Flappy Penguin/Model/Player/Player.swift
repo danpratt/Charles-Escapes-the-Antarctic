@@ -46,6 +46,8 @@ class Player: SKSpriteNode, GameSprite {
         physicsBody?.mass = 30
         // prevent rotating
         physicsBody?.allowsRotation = false
+        physicsBody?.categoryBitMask = PhysicsCategory.penguin.rawValue
+        physicsBody?.contactTestBitMask = PhysicsCategory.enemy.rawValue | PhysicsCategory.ground.rawValue | PhysicsCategory.powerup.rawValue | PhysicsCategory.coin.rawValue
     }
     
     // MARK: - Update Function

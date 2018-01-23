@@ -22,6 +22,8 @@ class Bee: SKSpriteNode, GameSprite {
         // add physics engine
         physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2)
         physicsBody?.affectedByGravity = false
+        physicsBody?.categoryBitMask = PhysicsCategory.enemy.rawValue
+        physicsBody?.collisionBitMask = ~PhysicsCategory.damagedPenguin.rawValue
     }
     
     // TODO: - Setup onTap function

@@ -20,6 +20,8 @@ class MadFly: SKSpriteNode, GameSprite {
         run(flyAnimation)
         physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2)
         physicsBody?.affectedByGravity = false
+        physicsBody?.categoryBitMask = PhysicsCategory.enemy.rawValue
+        physicsBody?.collisionBitMask = ~PhysicsCategory.damagedPenguin.rawValue
     }
     
     // MARK: - Animations
