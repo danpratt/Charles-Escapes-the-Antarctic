@@ -27,7 +27,7 @@ class HUD: SKNode {
         coinIcon.size = CGSize(width: 26, height: 26)
         coinIcon.position = CGPoint(x: 23, y: coinYPos)
         // setup score text label
-        scoreText.fontName = "Avenir-Next-HeavyItalic"
+        scoreText.fontName = "AvenirNext-HeavyItalic"
         scoreText.position = CGPoint(x: 41, y: coinYPos)
         // align text
         scoreText.horizontalAlignmentMode = .left

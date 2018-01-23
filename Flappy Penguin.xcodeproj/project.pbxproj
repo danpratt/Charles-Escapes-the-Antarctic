@@ -10,6 +10,8 @@
 		6500494C2017D7D700515BA9 /* hud.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 6500494B2017D7D700515BA9 /* hud.atlas */; };
 		6500494E2017D8A600515BA9 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6500494D2017D8A600515BA9 /* HUD.swift */; };
 		650049522017E30B00515BA9 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650049512017E30B00515BA9 /* Background.swift */; };
+		6504696D2017ECE800D55272 /* CharlesPath.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6504696B2017ECE800D55272 /* CharlesPath.sks */; };
+		6504696E2017ECE800D55272 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6504696C2017ECE800D55272 /* Assets.xcassets */; };
 		65796C292016CCA500E415B6 /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65796C282016CCA500E415B6 /* PhysicsCategory.swift */; };
 		65A5AD2D201147A100A0DA7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5AD2C201147A100A0DA7F /* AppDelegate.swift */; };
 		65A5AD31201147A100A0DA7F /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65A5AD30201147A100A0DA7F /* Actions.sks */; };
@@ -65,6 +67,8 @@
 		6500494B2017D7D700515BA9 /* hud.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = hud.atlas; sourceTree = "<group>"; };
 		6500494D2017D8A600515BA9 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		650049512017E30B00515BA9 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		6504696B2017ECE800D55272 /* CharlesPath.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CharlesPath.sks; sourceTree = "<group>"; };
+		6504696C2017ECE800D55272 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65796C282016CCA500E415B6 /* PhysicsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
 		65A5AD29201147A100A0DA7F /* Charles Escapes the Antarctic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Charles Escapes the Antarctic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A5AD2C201147A100A0DA7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +140,15 @@
 				6500494B2017D7D700515BA9 /* hud.atlas */,
 			);
 			path = HUD;
+			sourceTree = "<group>";
+		};
+		650469662017EC9D00D55272 /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				6504696B2017ECE800D55272 /* CharlesPath.sks */,
+				6504696C2017ECE800D55272 /* Assets.xcassets */,
+			);
+			path = Particles;
 			sourceTree = "<group>";
 		};
 		65A5AD20201147A100A0DA7F = {
@@ -307,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				65EEC11F2011ADB600CA6CAD /* charles.atlas */,
+				650469662017EC9D00D55272 /* Particles */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -451,10 +465,12 @@
 				65EEC1252013C5F700CA6CAD /* goods.atlas in Resources */,
 				65A5AD67201164B500A0DA7F /* bee.atlas in Resources */,
 				65A5AD38201147A100A0DA7F /* Main.storyboard in Resources */,
+				6504696D2017ECE800D55272 /* CharlesPath.sks in Resources */,
 				65EEC12F2013CC2800CA6CAD /* bat.atlas in Resources */,
 				65EF4F66201522F200CC6E71 /* EncounterBees.sks in Resources */,
 				65A5AD3A201147A100A0DA7F /* Assets.xcassets in Resources */,
 				65A5AD3D201147A100A0DA7F /* LaunchScreen.storyboard in Resources */,
+				6504696E2017ECE800D55272 /* Assets.xcassets in Resources */,
 				65A5AD31201147A100A0DA7F /* Actions.sks in Resources */,
 				65EEC12C2013CC0600CA6CAD /* madfly.atlas in Resources */,
 				6500494C2017D7D700515BA9 /* hud.atlas in Resources */,

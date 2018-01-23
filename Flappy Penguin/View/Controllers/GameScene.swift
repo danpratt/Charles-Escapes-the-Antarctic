@@ -60,6 +60,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // add the player
         player.spawn(parentNode: world, position: initialPlayerPosition)
+        // setup a the particles on charles
+        guard let dotEmitter = SKEmitterNode(fileNamed: "CharlesPath") else {
+            fatalError("Unable to load emitter")
+        }
+        player.zPosition = 10
+        dotEmitter.zPosition = -1
+        player.addChild(dotEmitter)
+        dotEmitter.targetNode = world
         
 //        // start listening to motion events from accelerometer
 //        motionManger.startAccelerometerUpdates()

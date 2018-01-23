@@ -36,6 +36,8 @@ class Player: SKSpriteNode, GameSprite {
     var isGodModeOn = false
     var isDamaged = false
     
+    // MARK: - Spawn
+    
     func spawn(parentNode: SKNode, position: CGPoint, size: CGSize = CGSize(width: 64, height: 64)) {
         parentNode.addChild(self)
         createAnimations()
@@ -56,6 +58,18 @@ class Player: SKSpriteNode, GameSprite {
         physicsBody?.allowsRotation = false
         physicsBody?.categoryBitMask = PhysicsCategory.penguin.rawValue
         physicsBody?.contactTestBitMask = PhysicsCategory.enemy.rawValue | PhysicsCategory.ground.rawValue | PhysicsCategory.powerup.rawValue | PhysicsCategory.coin.rawValue
+        
+        // grant a momentary reprieve from gravity
+        physicsBody?.affectedByGravity = false
+        physicsBody?.velocity.dy = 50
+        // create action to start gravity after short delay
+        let startGravitySequence = SKAction.sequence([
+                SKAction.wait(forDuration: 0.6),
+                SKAction.run {
+                    self.physicsBody?.affectedByGravity = true
+            }
+            ])
+        run(startGravitySequence)
     }
     
     // MARK: - Update Function
