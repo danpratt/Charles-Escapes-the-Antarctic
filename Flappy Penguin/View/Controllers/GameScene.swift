@@ -26,6 +26,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var playerProgress = CGFloat()
     var nextEncounterSpawnPosition: CGFloat = 150
     
+    // Property for collecting coins
+    var coinsCollected = 0
+    
 //    // CoreMotion Manager
 //    let motionManger = CMMotionManager()
     
@@ -190,10 +193,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             player.takeDamage()
         case PhysicsCategory.coin.rawValue:
             print("Grabbing coin!")
+            guard let coin = otherBody.node as? Coin else { return }
+            coin.collect()
+            coinsCollected += coin.value
+            print("You have collected: \(String(describing: coinsCollected))")
         case PhysicsCategory.powerup.rawValue:
             print("Grabbing a star!")
+            player.superStar()
         default:
-            fatalError("Unable to find category bitmask, check game logic")
+            print("Probably grabbing a coin after it has been picked up")
         }
     }
     

@@ -10,7 +10,7 @@ import SpriteKit
 
 enum PenguinAnimation: String {
     typealias RawValue = String
-    case Soar = "soarAnimation", Fly = "flyAnimation"
+    case Soar = "soarAnimation", Fly = "flyAnimation", Star = "superStar"
 }
 
 class Player: SKSpriteNode, GameSprite {
@@ -245,5 +245,29 @@ class Player: SKSpriteNode, GameSprite {
         } else {
             run(damageAnimation)
         }
+    }
+    
+    // MARK: - Star Collection
+    func superStar() {
+        // remove any existing star powerup animation (if existing)
+        removeAction(forKey: PenguinAnimation.Star.rawValue)
+        // Speed up
+        forwardVelocity = 400
+        // turn on god mode
+        isGodModeOn = true
+        // set star power sequence to play for 8 seconds
+        let superStar = SKAction.sequence([
+                SKAction.scale(to: 0.7, duration: 0.1),
+                SKAction.scale(to: 1.1, duration: 0.1),
+                SKAction.scale(to: 0.6, duration: 0.1),
+                SKAction.scale(to: 1.5, duration: 0.3),
+                SKAction.wait(forDuration: 8),
+                SKAction.scale(to: 1, duration: 1),
+                SKAction.run({
+                    self.forwardVelocity = 200
+                    self.isGodModeOn = false
+                })
+            ])
+        run(superStar, withKey: PenguinAnimation.Star.rawValue)
     }
 }
