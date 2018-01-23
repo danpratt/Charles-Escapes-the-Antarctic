@@ -44,6 +44,7 @@
 		65EF4F65201522F200CC6E71 /* EncounterBats.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65EF4F62201522F200CC6E71 /* EncounterBats.sks */; };
 		65EF4F66201522F200CC6E71 /* EncounterBees.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65EF4F63201522F200CC6E71 /* EncounterBees.sks */; };
 		65EF4F67201522F200CC6E71 /* EncounterCoins.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65EF4F64201522F200CC6E71 /* EncounterCoins.sks */; };
+		65FEFF832017F4F60020AF52 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FEFF822017F4F60020AF52 /* MenuScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		65EF4F62201522F200CC6E71 /* EncounterBats.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterBats.sks; sourceTree = "<group>"; };
 		65EF4F63201522F200CC6E71 /* EncounterBees.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterBees.sks; sourceTree = "<group>"; };
 		65EF4F64201522F200CC6E71 /* EncounterCoins.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterCoins.sks; sourceTree = "<group>"; };
+		65FEFF822017F4F60020AF52 /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +272,7 @@
 			children = (
 				65A5AD34201147A100A0DA7F /* GameViewController.swift */,
 				65A5AD32201147A100A0DA7F /* GameScene.swift */,
+				65FEFF822017F4F60020AF52 /* MenuScene.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				65EEC11D2011A70C00CA6CAD /* Ground.swift in Sources */,
 				65EEC1402013EBED00CA6CAD /* EncounterManager.swift in Sources */,
 				65EEC1122011A06E00CA6CAD /* Bee.swift in Sources */,
+				65FEFF832017F4F60020AF52 /* MenuScene.swift in Sources */,
 				65EEC1382013D0F000CA6CAD /* Blade.swift in Sources */,
 				650049522017E30B00515BA9 /* Background.swift in Sources */,
 				65EEC10F20119F0800CA6CAD /* GameSprite.swift in Sources */,

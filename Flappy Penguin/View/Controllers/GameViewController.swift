@@ -15,19 +15,15 @@ class GameViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        // Create our scene
-        let scene = GameScene()
-        // Configure the view
-        let skView = self.view as! SKView
-        skView.showsFPS = true
-        skView.showsNodeCount = true
+        // Create Menu Scene
+        let menuScene = MenuScene()
+        let skView = view as! SKView
+        // ignore drawing order of child nodes to increase performance
         skView.ignoresSiblingOrder = true
-        scene.scaleMode = .aspectFill
-        
-        // size scene to fit the view exactly
-        scene.size = view.bounds.size
-        // show the new scene
-        skView.presentScene(scene)
+        // size scene to fit device
+        menuScene.size = view.bounds.size
+        // show the menu
+        skView.presentScene(menuScene)
     }
 
     override var shouldAutorotate: Bool {
