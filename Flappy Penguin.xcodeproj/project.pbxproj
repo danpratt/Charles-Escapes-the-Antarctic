@@ -23,6 +23,7 @@
 		65A5AD48201147A200A0DA7F /* Charles_Escapes_the_AntarcticTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5AD47201147A200A0DA7F /* Charles_Escapes_the_AntarcticTests.swift */; };
 		65A5AD53201147A200A0DA7F /* Charles_Escapes_the_AntarcticUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5AD52201147A200A0DA7F /* Charles_Escapes_the_AntarcticUITests.swift */; };
 		65A5AD67201164B500A0DA7F /* bee.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 65A5AD66201164B500A0DA7F /* bee.atlas */; };
+		65E0746420191C7100827960 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E0746320191C7100827960 /* GameKit.framework */; };
 		65EEC10F20119F0800CA6CAD /* GameSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EEC10E20119F0800CA6CAD /* GameSprite.swift */; };
 		65EEC1122011A06E00CA6CAD /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EEC1112011A06E00CA6CAD /* Bee.swift */; };
 		65EEC11A2011A67100CA6CAD /* ground.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 65EEC1192011A67100CA6CAD /* ground.atlas */; };
@@ -93,6 +94,8 @@
 		65A5AD52201147A200A0DA7F /* Charles_Escapes_the_AntarcticUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charles_Escapes_the_AntarcticUITests.swift; sourceTree = "<group>"; };
 		65A5AD54201147A200A0DA7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65A5AD66201164B500A0DA7F /* bee.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bee.atlas; sourceTree = "<group>"; };
+		65E0746320191C7100827960 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		65E0746520191CBE00827960 /* Charles Escapes the Antarctic.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Charles Escapes the Antarctic.entitlements"; sourceTree = "<group>"; };
 		65EEC10E20119F0800CA6CAD /* GameSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSprite.swift; sourceTree = "<group>"; };
 		65EEC1112011A06E00CA6CAD /* Bee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bee.swift; sourceTree = "<group>"; };
 		65EEC1192011A67100CA6CAD /* ground.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = ground.atlas; sourceTree = "<group>"; };
@@ -128,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65E0746420191C7100827960 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,10 +172,12 @@
 		65A5AD20201147A100A0DA7F = {
 			isa = PBXGroup;
 			children = (
+				65E0746520191CBE00827960 /* Charles Escapes the Antarctic.entitlements */,
 				65A5AD2B201147A100A0DA7F /* Flappy Penguin */,
 				65A5AD46201147A200A0DA7F /* Charles Escapes the AntarcticTests */,
 				65A5AD51201147A200A0DA7F /* Charles Escapes the AntarcticUITests */,
 				65A5AD2A201147A100A0DA7F /* Products */,
+				65E074602019114500827960 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -225,6 +231,14 @@
 				65EEC12B2013CC0600CA6CAD /* madfly.atlas */,
 			);
 			path = Monsters;
+			sourceTree = "<group>";
+		};
+		65E074602019114500827960 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				65E0746320191C7100827960 /* GameKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		65EEC10C20119E6100CA6CAD /* Model */ = {
@@ -449,6 +463,14 @@
 					65A5AD28201147A100A0DA7F = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 					65A5AD42201147A200A0DA7F = {
 						CreatedOnToolsVersion = 9.2;

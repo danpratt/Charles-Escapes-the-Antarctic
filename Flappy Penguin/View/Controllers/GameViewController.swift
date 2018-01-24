@@ -10,6 +10,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 import AVFoundation
+import GameKit
 
 class GameViewController: UIViewController {
     
@@ -37,6 +38,9 @@ class GameViewController: UIViewController {
             musicPlayer.prepareToPlay()
             musicPlayer.play()
         }
+        
+        // setup game center
+        authenticateLocalPlayer(scene: menuScene)
     }
 
     override var shouldAutorotate: Bool {
@@ -50,5 +54,21 @@ class GameViewController: UIViewController {
     // we don't want to show a status bar in a game
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    // MARK: - Game Center
+    private func authenticateLocalPlayer(scene: MenuScene) {
+        // create a new game center local instance
+        let localPlayer = GKLocalPlayer.localPlayer()
+        // check authentication status
+        localPlayer.authenticateHandler = {
+            (viewController: UIViewController!, error: Error!) -> Void in
+            if viewController != nil {
+                // they are logged in so show login
+                self.present(viewController, animated: true, completion: nil)
+            } else if localPlayer.isAuthenticated {
+                // they authenticated
+            }
+        }
     }
 }
