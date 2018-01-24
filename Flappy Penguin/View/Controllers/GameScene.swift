@@ -8,6 +8,7 @@
 
 import SpriteKit
 import GameplayKit
+import GameKit
 //import CoreMotion
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
@@ -252,7 +253,98 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // MARK: - Game Over
     func gameOver() {
+        updateLeaderboard()
+        checkForAchievements()
         hud.showGameOverButtons()
+    }
+    
+    // MARK: - Game Center
+    
+    // update the leaderboard
+    private func updateLeaderboard() {
+        if GKLocalPlayer.localPlayer().isAuthenticated {
+            // create a new score object
+            let coins = GKScore(leaderboardIdentifier: "CTFP_LB")
+            // set the score to the value of our coins
+            coins.value = Int64(coinsCollected)
+            // wrap into an array and report the score
+            GKScore.report([coins], withCompletionHandler: { (error) in
+                if let error = error {
+                    print("There was an error posting to leaderboards: \(String(describing: error))")
+                }
+            })
+        }
+    }
+    
+    // check for achievements
+    private func checkForAchievements() {
+        if GKLocalPlayer.localPlayer().isAuthenticated {
+            // check to see if user has earned over 500 coins
+            if coinsCollected >= 500 {
+                let achievement = GKAchievement(identifier: "500_coins")
+                if !achievement.isCompleted {
+                    achievement.showsCompletionBanner = true
+                    achievement.percentComplete = 100
+                    GKAchievement.report([achievement], withCompletionHandler: { (error) in
+                        if let error = error {
+                            print("There was an error saving achievement: \(String(describing: error))")
+                        }
+                    })
+                } else {
+                    print("Already completed")
+                }
+            }
+            
+        // check to see if user has earned over 750 coins
+        if coinsCollected >= 750 {
+            let achievement = GKAchievement(identifier: "750_coins")
+            if !achievement.isCompleted {
+                achievement.showsCompletionBanner = true
+                achievement.percentComplete = 100
+                GKAchievement.report([achievement], withCompletionHandler: { (error) in
+                    if let error = error {
+                        print("There was an error saving achievement: \(String(describing: error))")
+                    }
+                })
+            } else {
+                print("Already completed")
+                }
+            }
+        }
+        
+        // check to see if user has earned over 1000 coins
+        if coinsCollected >= 1000 {
+            let achievement = GKAchievement(identifier: "1000_coins")
+            if !achievement.isCompleted {
+                achievement.showsCompletionBanner = true
+                achievement.percentComplete = 100
+                GKAchievement.report([achievement], withCompletionHandler: { (error) in
+                    if let error = error {
+                        print("There was an error saving achievement: \(String(describing: error))")
+                    }
+                })
+            } else {
+                print("Already completed")
+            }
+        }
+        
+        // check to see if user has earned over 1500 coins
+        if coinsCollected >= 1500 {
+            let achievement = GKAchievement(identifier: "1500_coins")
+            if !achievement.isCompleted {
+                achievement.showsCompletionBanner = true
+                achievement.percentComplete = 100
+                GKAchievement.report([achievement], withCompletionHandler: { (error) in
+                    if let error = error {
+                        print("There was an error saving achievement: \(String(describing: error))")
+                    }
+                })
+            } else {
+                print("Already completed")
+            }
+        }
+
+        
     }
     
 }

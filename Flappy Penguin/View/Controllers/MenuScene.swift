@@ -7,13 +7,18 @@
 //
 
 import SpriteKit
+import GameKit
 
-class MenuScene: SKScene {
+class MenuScene: SKScene, GKGameCenterControllerDelegate {
+
     // get texture
     let textureAtlas: SKTextureAtlas = SKTextureAtlas(named: "hud")
     // instantiate a sprite node for the start button
     let startButton = SKSpriteNode()
     var startButtonPressedAction = SKAction()
+    
+    // sky blue color
+    let skyBlueColor = UIColor(red: 0.4, green: 0.6, blue: 0.95, alpha: 1)
     
     // MARK: - Did Move to View
     
@@ -21,7 +26,7 @@ class MenuScene: SKScene {
         // position nodes from scene center
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
         // set sky blue background color
-        backgroundColor = UIColor(red: 0.4, green: 0.6, blue: 0.95, alpha: 1)
+        backgroundColor = skyBlueColor
         // add background image
         let backgroundImage = SKSpriteNode(imageNamed: "background-menu")
         let backgroundImageWidth = UIScreen.main.bounds.width
@@ -34,7 +39,7 @@ class MenuScene: SKScene {
         // setup logo
         
         // first line of text
-        let logoTextTop = SKLabelNode(fontNamed: "AvenirNext-Heavy")
+        let logoTextTop = SKLabelNode(fontNamed: "ChalkboardSE-Bold")
         logoTextTop.text = "Charles"
         logoTextTop.position = CGPoint(x: 0, y: 100)
         logoTextTop.fontSize = 60
@@ -42,7 +47,7 @@ class MenuScene: SKScene {
         addChild(logoTextTop)
         
         // second line of text below
-        let logoTextBottom = SKLabelNode(fontNamed: "AvenirNext-Heavy")
+        let logoTextBottom = SKLabelNode(fontNamed: "ChalkboardSE-Bold")
         logoTextBottom.text = "The Flappy Penguin"
         logoTextBottom.position = CGPoint(x: 0, y: 50)
         logoTextBottom.fontSize = 40
@@ -59,7 +64,7 @@ class MenuScene: SKScene {
         addChild(startButton)
         
         // add text to the button
-        let startButtonText = SKLabelNode(fontNamed: "AvenirNext-Heavy")
+        let startButtonText = SKLabelNode(fontNamed: "ChalkboardSE-Bold")
         startButtonText.text = "START GAME"
         startButtonText.verticalAlignmentMode = .center
         startButtonText.position = CGPoint(x: 0, y: -13)
@@ -89,6 +94,13 @@ class MenuScene: SKScene {
                     self.view?.presentScene(GameScene(size: self.size))
                 })
             ])
+        
+        // Game center
+        print("Loaded")
+        if GKLocalPlayer.localPlayer().isAuthenticated {
+            print("Authenticated")
+            createLeaderBoardButton()
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -101,9 +113,51 @@ class MenuScene: SKScene {
                 if node.name?.range(of: "StartButton") != nil {
                     startButton.run(startButtonPressedAction)
                     break
+                } else if node.name == "LeaderboardButton" {
+                    showLeaderboard()
                 }
             }
             
         }
     }
+    
+    // MARK: - Game Center
+    
+    // required delegate function
+    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+        gameCenterViewController.dismiss(animated: true, completion: nil)
+    }
+    
+    // create leaderboard button
+    func createLeaderBoardButton() {
+        // add the background
+        let background = SKSpriteNode(color: skyBlueColor, size: CGSize(width: 145, height: 28))
+        // add some text
+        let leaderBoardText = SKLabelNode(fontNamed: "ChalkboardSE-Regular")
+        leaderBoardText.text = "Leaderboard"
+        leaderBoardText.name = "LeaderboardButton"
+        leaderBoardText.verticalAlignmentMode = .center
+        background.position = CGPoint(x: 0, y: -98)
+        leaderBoardText.fontSize = 20
+        background.addChild(leaderBoardText)
+        background.alpha = 0.9
+        addChild(background)
+    }
+    
+    // show the leaderboard
+    private func showLeaderboard() {
+        // create the view controller
+        let gameCenter = GKGameCenterViewController()
+        // set this scene as delegate
+        gameCenter.gameCenterDelegate = self
+        // show the leaderboards
+        gameCenter.viewState = .default
+        // find the current view controller
+        if let gameViewController = self.view?.window?.rootViewController {
+            gameViewController.show(gameCenter, sender: self)
+            gameViewController.navigationController?.pushViewController(gameCenter, animated: true)
+        }
+        
+    }
+
 }

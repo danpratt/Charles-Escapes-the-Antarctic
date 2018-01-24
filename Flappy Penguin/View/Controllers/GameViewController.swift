@@ -67,7 +67,8 @@ class GameViewController: UIViewController {
                 // they are logged in so show login
                 self.present(viewController, animated: true, completion: nil)
             } else if localPlayer.isAuthenticated {
-                // they authenticated
+                // they authenticated now, so show the leaderboard
+                scene.createLeaderBoardButton()
             }
         }
     }
