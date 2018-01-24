@@ -243,4 +243,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    // MARK: - Game Over
+    func gameOver() {
+        hud.showGameOverButtons()
+    }
+    
 }

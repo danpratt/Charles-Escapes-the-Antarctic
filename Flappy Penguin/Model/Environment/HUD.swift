@@ -16,6 +16,9 @@ class HUD: SKNode {
     // Label Node to display score
     let scoreText = SKLabelNode(text: "000000")
     
+    // setup restart nodes
+    let restartButton = SKSpriteNode()
+    let menuButton = SKSpriteNode()
     
     func createHUDNodes(screenSize: CGSize) {
         // --- Create the coin cointer --- //
@@ -50,6 +53,20 @@ class HUD: SKNode {
             // add to the hud
             addChild(newHeartNode)
         }
+        
+        // --- Create restart nodes -- //
+        restartButton.texture = textureAtlas.textureNamed("button-restart")
+        menuButton.texture = textureAtlas.textureNamed("button-menu")
+        // add names to nodes so they can be tapped on
+        restartButton.name = "restartGame"
+        menuButton.name = "returnToMenu"
+        // position the button nodes
+        let centerOfScreen = CGPoint(x: screenSize.width / 2, y: screenSize.height / 2)
+        restartButton.position = centerOfScreen
+        menuButton.position = CGPoint(x: centerOfScreen.x - 140, y: centerOfScreen.y)
+        // set button sizes
+        restartButton.size = CGSize(width: 140, height: 140)
+        menuButton.size = CGSize(width: 70, height: 70)
     }
     
     // MARK: - Update HUD
@@ -78,5 +95,19 @@ class HUD: SKNode {
                 heart.run(fadeAction)
             }
         }
+    }
+    
+    // show game over buttons
+    func showGameOverButtons() {
+        // let buttons fade in so start alpha at 0
+        restartButton.alpha = 0
+        menuButton.alpha = 0
+        // add buttons
+        addChild(restartButton)
+        addChild(menuButton)
+        // fade in
+        let fadeInAnimation = SKAction.fadeIn(withDuration: 0.4)
+        restartButton.run(fadeInAnimation)
+        menuButton.run(fadeInAnimation)
     }
 }

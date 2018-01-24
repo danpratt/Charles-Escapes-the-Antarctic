@@ -208,7 +208,15 @@ class Player: SKSpriteNode, GameSprite {
                 // rotate charles onto his back
                 SKAction.rotate(toAngle: 3, duration: 0.2),
                 SKAction.wait(forDuration: 0.5),
-                endDie
+                endDie,
+                SKAction.wait(forDuration: 1),
+                SKAction.run({
+                    // show gameover buttons
+                    guard let gameScene = self.parent?.parent as? GameScene else {
+                        fatalError("Player Dies: Somehow the parent's parent is not the GameScene, check logic")
+                    }
+                    gameScene.gameOver()
+                })
             ])
     }
     
@@ -235,11 +243,11 @@ class Player: SKSpriteNode, GameSprite {
         alpha = 1
         // remove all animations
         removeAllActions()
-        // run die animation
-        run(dieAnimation)
         // stop any further movement
         flapping = false
         forwardVelocity = 0
+        // run die animation
+        run(dieAnimation)
     }
     
     // MARK: - Taking Damage
