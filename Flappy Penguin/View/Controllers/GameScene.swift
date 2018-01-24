@@ -162,12 +162,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             // locate the node at this location
             let nodeTouched = nodes(at: location)
             // check to see if it is a gamekit sprite
-            guard let gameSprite = nodeTouched.first as? GameSprite else {
-                return
+            if let gameSprite = nodeTouched.first as? GameSprite  {
+                // run that node's onTap function
+                gameSprite.onTap()
             }
-            // run that node's onTap function
-            gameSprite.onTap()
+            if nodeTouched.first?.name == "restartGame" {
+                view?.presentScene(GameScene(size: self.size), transition: .crossFade(withDuration: 0.6))
+            } else if nodeTouched.first?.name == "returnToMenu" {
+                view?.presentScene(MenuScene(size: self.size), transition: .crossFade(withDuration: 0.6))
+            }
         }
+        
+        
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
