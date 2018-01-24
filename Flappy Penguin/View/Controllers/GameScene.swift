@@ -19,6 +19,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let powerUpStar = Star()
     var backgrounds: [Background] = []
     
+    // Cache the game start sound
+    let gameStartSound = SKAction.playSoundFileNamed("StartGame.aif", waitForCompletion: true)
+    
     // Create the player
     let player = Player()
     
@@ -57,7 +60,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // Height will be set by child nodes
         let groundSize = CGSize(width: size.width * 3, height: 0)
         ground.spawn(parentNode: world, position: groundPosition, size: groundSize)
-        
+        run(gameStartSound)
         // add the player
         player.spawn(parentNode: world, position: initialPlayerPosition)
         // setup a the particles on charles
@@ -133,11 +136,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             nextEncounterSpawnPosition += 1400
             
             // check to see if we should randomly generate a star
-            let starRoll = Int(arc4random_uniform(10))
+            let starRoll = Int(arc4random_uniform(3))
             if starRoll == 0 {
                 // check to make sure star is not already on screen
                 if abs(player.position.x - powerUpStar.position.x) > 1200 {
-                    let randomYPos = CGFloat(arc4random_uniform(400))
+                    let randomYPos = CGFloat(arc4random_uniform(360) + 40)
                     powerUpStar.position = CGPoint(x: nextEncounterSpawnPosition, y: randomYPos)
                     powerUpStar.physicsBody?.angularVelocity = 0
                     powerUpStar.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
@@ -169,7 +172,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if nodeTouched.first?.name == "restartGame" {
                 view?.presentScene(GameScene(size: self.size), transition: .crossFade(withDuration: 0.6))
             } else if nodeTouched.first?.name == "returnToMenu" {
-                view?.presentScene(MenuScene(size: self.size), transition: .crossFade(withDuration: 0.6))
+                view?.presentScene(MenuScene(size: self.size), transition: .doorsOpenHorizontal(withDuration: 1))
             }
         }
         
@@ -237,15 +240,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             coin.collect()
             coinsCollected += coin.value
             hud.setScoreDisplay(newCoinCount: coinsCollected)
-            print("You have collected: \(String(describing: coinsCollected))")
         case PhysicsCategory.powerup.rawValue:
             print("Grabbing a star!")
             player.superStar()
             guard let star = otherBody.node as? Star else { return }
             star.collectStar()
-            
         default:
-            print("Probably grabbing a coin after it has been picked up")
+            print("Coin has already been picked up, don't want to count it twice!")
         }
     }
     

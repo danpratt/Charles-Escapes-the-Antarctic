@@ -24,6 +24,11 @@ class Player: SKSpriteNode, GameSprite {
     var damageAnimation = SKAction()
     var dieAnimation = SKAction()
     
+    // Sounds
+    let powerUpSound = SKAction.playSoundFileNamed("Powerup.aif", waitForCompletion: false)
+    let hurtSound = SKAction.playSoundFileNamed("Hurt.aif", waitForCompletion: false)
+    let gameOverSound = SKAction.playSoundFileNamed("GameOver.wav", waitForCompletion: true)
+    
     // physics control logic
     var flapping = false
     let maxFlappingForce: CGFloat = 57000
@@ -210,6 +215,7 @@ class Player: SKSpriteNode, GameSprite {
                 SKAction.wait(forDuration: 0.5),
                 endDie,
                 SKAction.wait(forDuration: 1),
+                gameOverSound,
                 SKAction.run({
                     // show gameover buttons
                     guard let gameScene = self.parent?.parent as? GameScene else {
@@ -267,6 +273,9 @@ class Player: SKSpriteNode, GameSprite {
         } else {
             run(damageAnimation)
         }
+        
+        // play hurt sound
+        run(hurtSound)
     }
     
     // MARK: - Star Collection
@@ -291,5 +300,6 @@ class Player: SKSpriteNode, GameSprite {
                 })
             ])
         run(superStar, withKey: PenguinAnimation.Star.rawValue)
+        run(powerUpSound)
     }
 }

@@ -45,6 +45,12 @@
 		65EF4F66201522F200CC6E71 /* EncounterBees.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65EF4F63201522F200CC6E71 /* EncounterBees.sks */; };
 		65EF4F67201522F200CC6E71 /* EncounterCoins.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65EF4F64201522F200CC6E71 /* EncounterCoins.sks */; };
 		65FEFF832017F4F60020AF52 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FEFF822017F4F60020AF52 /* MenuScene.swift */; };
+		65FEFF8A201807A00020AF52 /* BackgroundMusic.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 65FEFF85201807A00020AF52 /* BackgroundMusic.m4a */; };
+		65FEFF8B201807A00020AF52 /* Hurt.aif in Resources */ = {isa = PBXBuildFile; fileRef = 65FEFF86201807A00020AF52 /* Hurt.aif */; };
+		65FEFF8C201807A00020AF52 /* Powerup.aif in Resources */ = {isa = PBXBuildFile; fileRef = 65FEFF87201807A00020AF52 /* Powerup.aif */; };
+		65FEFF8D201807A00020AF52 /* StartGame.aif in Resources */ = {isa = PBXBuildFile; fileRef = 65FEFF88201807A00020AF52 /* StartGame.aif */; };
+		65FEFF8E201807A00020AF52 /* Coin.aif in Resources */ = {isa = PBXBuildFile; fileRef = 65FEFF89201807A00020AF52 /* Coin.aif */; };
+		65FEFF9020180EB70020AF52 /* GameOver.wav in Resources */ = {isa = PBXBuildFile; fileRef = 65FEFF8F20180EB70020AF52 /* GameOver.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +115,12 @@
 		65EF4F63201522F200CC6E71 /* EncounterBees.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterBees.sks; sourceTree = "<group>"; };
 		65EF4F64201522F200CC6E71 /* EncounterCoins.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterCoins.sks; sourceTree = "<group>"; };
 		65FEFF822017F4F60020AF52 /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
+		65FEFF85201807A00020AF52 /* BackgroundMusic.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = BackgroundMusic.m4a; sourceTree = "<group>"; };
+		65FEFF86201807A00020AF52 /* Hurt.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hurt.aif; sourceTree = "<group>"; };
+		65FEFF87201807A00020AF52 /* Powerup.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Powerup.aif; sourceTree = "<group>"; };
+		65FEFF88201807A00020AF52 /* StartGame.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = StartGame.aif; sourceTree = "<group>"; };
+		65FEFF89201807A00020AF52 /* Coin.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Coin.aif; sourceTree = "<group>"; };
+		65FEFF8F20180EB70020AF52 /* GameOver.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = GameOver.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,11 +292,12 @@
 		65EEC1162011A45D00CA6CAD /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				65A5AD39201147A100A0DA7F /* Assets.xcassets */,
 				6500494A2017D7C100515BA9 /* HUD */,
 				65EEC11E2011ADA700CA6CAD /* Player */,
 				65EEC1182011A66500CA6CAD /* Environment */,
-				65A5AD39201147A100A0DA7F /* Assets.xcassets */,
 				65A5AD68201164E300A0DA7F /* Monsters */,
+				65FEFF84201807A00020AF52 /* Sound */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -352,6 +365,19 @@
 				65EEC13F2013EBED00CA6CAD /* EncounterManager.swift */,
 			);
 			path = Encounters;
+			sourceTree = "<group>";
+		};
+		65FEFF84201807A00020AF52 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				65FEFF85201807A00020AF52 /* BackgroundMusic.m4a */,
+				65FEFF86201807A00020AF52 /* Hurt.aif */,
+				65FEFF87201807A00020AF52 /* Powerup.aif */,
+				65FEFF88201807A00020AF52 /* StartGame.aif */,
+				65FEFF89201807A00020AF52 /* Coin.aif */,
+				65FEFF8F20180EB70020AF52 /* GameOver.wav */,
+			);
+			path = Sound;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -463,15 +489,21 @@
 			files = (
 				65EEC1302013CC2800CA6CAD /* blade.atlas in Resources */,
 				65EEC1202011ADB600CA6CAD /* charles.atlas in Resources */,
+				65FEFF8E201807A00020AF52 /* Coin.aif in Resources */,
 				65EF4F65201522F200CC6E71 /* EncounterBats.sks in Resources */,
 				65EEC11A2011A67100CA6CAD /* ground.atlas in Resources */,
+				65FEFF8C201807A00020AF52 /* Powerup.aif in Resources */,
 				65EEC1252013C5F700CA6CAD /* goods.atlas in Resources */,
+				65FEFF8B201807A00020AF52 /* Hurt.aif in Resources */,
+				65FEFF8D201807A00020AF52 /* StartGame.aif in Resources */,
 				65A5AD67201164B500A0DA7F /* bee.atlas in Resources */,
 				65A5AD38201147A100A0DA7F /* Main.storyboard in Resources */,
 				6504696D2017ECE800D55272 /* CharlesPath.sks in Resources */,
 				65EEC12F2013CC2800CA6CAD /* bat.atlas in Resources */,
 				65EF4F66201522F200CC6E71 /* EncounterBees.sks in Resources */,
+				65FEFF9020180EB70020AF52 /* GameOver.wav in Resources */,
 				65A5AD3A201147A100A0DA7F /* Assets.xcassets in Resources */,
+				65FEFF8A201807A00020AF52 /* BackgroundMusic.m4a in Resources */,
 				65A5AD3D201147A100A0DA7F /* LaunchScreen.storyboard in Resources */,
 				6504696E2017ECE800D55272 /* Assets.xcassets in Resources */,
 				65A5AD31201147A100A0DA7F /* Actions.sks in Resources */,

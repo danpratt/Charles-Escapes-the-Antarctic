@@ -9,8 +9,13 @@
 import SpriteKit
 
 class Coin: SKSpriteNode, GameSprite {
+    
+    // coin animations
     var textureAtlas: SKTextureAtlas = SKTextureAtlas(named: "goods")
     var glowAnimation = SKAction()
+    
+    // coin sound played when player collects a coin
+    let coinSound = SKAction.playSoundFileNamed("Coin.aif", waitForCompletion: false)
     
     // coin value, storing default value for bronze coin
     var value: Int = 1
@@ -90,5 +95,7 @@ class Coin: SKSpriteNode, GameSprite {
             ])
         // run collection
         run(collectSequence)
+        // play sounds
+        run(coinSound)
     }
 }
