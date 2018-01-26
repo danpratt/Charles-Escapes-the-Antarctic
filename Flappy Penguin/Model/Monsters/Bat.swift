@@ -17,7 +17,7 @@ class Bat: SKSpriteNode, GameSprite {
         createAnimations()
         self.size = size
         self.position = position
-        self.run(flyAnimation)
+        run(flyAnimation)
         physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2)
         physicsBody?.affectedByGravity = false
         physicsBody?.categoryBitMask = PhysicsCategory.enemy.rawValue
@@ -33,8 +33,29 @@ class Bat: SKSpriteNode, GameSprite {
             textureAtlas.textureNamed("bat-fly")
         ]
         
+        let randomX = CGFloat(arc4random_uniform(100))
+        let randomBigY = CGFloat(arc4random_uniform(200))
+        let randomSmallY = CGFloat(arc4random_uniform(30))
+        let randomSpeed = Double(arc4random_uniform(150))
+        
+        let pathUp = SKAction.moveBy(x: -randomX, y: randomBigY, duration: randomSpeed)
+        let pathRight = SKAction.moveBy(x: randomX, y: randomSmallY, duration: randomSpeed)
+        let pathDown = SKAction.moveBy(x: -randomX, y: -100, duration: randomSpeed)
+        
+        let flyPattern = SKAction.repeatForever(SKAction.sequence([
+                pathUp,
+                pathRight,
+                pathDown
+            ]))
+        
         let flyAction = SKAction.animate(with: flyFrames, timePerFrame: 0.14)
-        flyAnimation = SKAction.repeatForever(flyAction)
+        let loopedFlyAction = SKAction.repeatForever(flyAction)
+        flyAnimation = SKAction.group([
+                flyPattern,
+                loopedFlyAction
+            ])
+        
+        
     }
     
     func onTap() {

@@ -20,7 +20,30 @@ class HUD: SKNode {
     let restartButton = SKSpriteNode()
     let menuButton = SKSpriteNode()
     
+    // store screen size
+    var screenSize: CGSize!
+    
+    // store animations
+    // fade out lost hearts
+    let removeHeartsAction = SKAction.group([
+            SKAction.fadeAlpha(to: 0.2, duration: 0.3),
+            SKAction.scale(to: 0.7, duration: 0.3)
+        ])
+    // pop in new hearts
+    let addHeartsAction = SKAction.sequence([
+            SKAction.group([
+                SKAction.fadeAlpha(to: 0.7, duration: 0.5),
+                SKAction.scale(to: 1.5, duration: 0.5)
+                ]),
+            SKAction.group([
+                SKAction.scale(to: 1, duration: 0.5),
+                SKAction.fadeIn(withDuration: 0.5)
+                ])
+        ])
+    
     func createHUDNodes(screenSize: CGSize) {
+        // set screen size
+        self.screenSize = screenSize
         // --- Create the coin cointer --- //
         // create a bronze coin icon
         let coinTextureAtlas = SKTextureAtlas(named: "goods")
@@ -40,19 +63,7 @@ class HUD: SKNode {
         addChild(scoreText)
         
         // --- Create life bar --- //
-        for index in 1...3 {
-            let newHeartNode = SKSpriteNode(texture: textureAtlas.textureNamed("heart-full"))
-            newHeartNode.size = CGSize(width: 46, height: 40)
-            // setup x and y positions
-            let heartXPosition = CGFloat(index * 60 + 33)
-            let heartYPosition = CGFloat(screenSize.height - 66)
-            newHeartNode.position = CGPoint(x: heartXPosition, y: heartYPosition)
-            
-            // add heart to array so they can be removed
-            heartNodes.append(newHeartNode)
-            // add to the hud
-            addChild(newHeartNode)
-        }
+        addHeartsToLifebar(hearts: 3)
         
         // --- Create restart nodes -- //
         restartButton.texture = textureAtlas.textureNamed("button-restart")
@@ -84,15 +95,19 @@ class HUD: SKNode {
     }
     
     // update life
-    func setHealthDisplay(newHealth: Int) {
-        // fade out lost hearts
-        let fadeAction = SKAction.fadeAlpha(to: 0.2, duration: 0.3)
-        
+    func setHealthDisplay(newHealth: Int = 3, removeHearts: Bool = true, firstSetup: Bool = false) {
+        if heartNodes.count < newHealth { addHeartsToLifebar() }
         for (index, heart) in heartNodes.enumerated() {
-            if index < newHealth {
-                heart.alpha = 1
-            } else {
-                heart.run(fadeAction)
+            if firstSetup { heart.run(addHeartsAction) }
+            else {
+                let newHealthIndex = newHealth - 1
+                if index < newHealthIndex - 1 {
+                    heart.alpha = 1.0
+                } else if removeHearts && index == newHealth {
+                    heart.run(removeHeartsAction)
+                } else if !removeHearts && index == newHealthIndex {
+                    heart.run(addHeartsAction)
+                }
             }
         }
     }
@@ -110,4 +125,25 @@ class HUD: SKNode {
         restartButton.run(fadeInAnimation)
         menuButton.run(fadeInAnimation)
     }
+    
+    func addHeartsToLifebar(hearts: Int = 1) {
+        let lowerBound = heartNodes.count
+        let upperBound = lowerBound + hearts
+        // --- Create life bar --- //
+        for index in lowerBound..<upperBound {
+            let newHeartNode = SKSpriteNode(texture: textureAtlas.textureNamed("heart-full"))
+            newHeartNode.size = CGSize(width: 46, height: 40)
+            // setup x and y positions
+            let heartXPosition = CGFloat(index * 60 + 33)
+            let heartYPosition = CGFloat(screenSize.height - 66)
+            newHeartNode.position = CGPoint(x: heartXPosition, y: heartYPosition)
+            newHeartNode.alpha = 0
+            
+            // add heart to array so they can be removed
+            heartNodes.append(newHeartNode)
+            // add to the hud
+            addChild(newHeartNode)
+        }
+    }
+    
 }

@@ -38,8 +38,10 @@ class Player: SKSpriteNode, GameSprite {
     
     // player health
     var health: Int = 3
+    let maxHealth = 9
     var isGodModeOn = false
     var isDamaged = false
+    var isDead = false
     
     // MARK: - Spawn
     
@@ -244,7 +246,7 @@ class Player: SKSpriteNode, GameSprite {
     
     // MARK: - Player Dies
     private func die() {
-        print("You have died")
+        isDead = true
         // make sure player is fully visible
         alpha = 1
         // remove all animations
@@ -266,7 +268,7 @@ class Player: SKSpriteNode, GameSprite {
         
         // remove 1 health
         health -= 1
-        
+        print("Player has: \(String(describing: health))")
         // check to see if player died
         if health <= 0 {
             die()
@@ -276,6 +278,12 @@ class Player: SKSpriteNode, GameSprite {
         
         // play hurt sound
         run(hurtSound)
+    }
+    
+    // MARK: - Gain a life
+    func gainALife() {
+        health += 1
+        print("Player lives: \(String(describing: health))")
     }
     
     // MARK: - Star Collection

@@ -34,6 +34,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // Property for collecting coins
     var coinsCollected = 0
+    // the amount of coins needed to collect to get a new life
+    let coinsForNewLife = 500
+    var numberOfNewLivesCollectedMultiplier = 1
+    var addingALife = false
     
 //    // CoreMotion Manager
 //    let motionManger = CMMotionManager()
@@ -88,6 +92,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // create hud for tracking life and score
         hud.createHUDNodes(screenSize: size)
         addChild(hud)
+        // fill hud hearts
+        hud.setHealthDisplay(firstSetup: true)
         // make sure hud stays above everything else
         hud.zPosition = 50
         
@@ -191,6 +197,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // MARK: - Update
     override func update(_ currentTime: TimeInterval) {
         player.update()
+        // saved for future reference, this will not make it into this game
 //        // get acceleromter data
 //        guard let accelData = motionManger.accelerometerData else {
 //            return
@@ -228,26 +235,35 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // discover contact type
         switch otherBody.categoryBitMask {
         case PhysicsCategory.ground.rawValue:
-            print("Hit the ground!")
             player.takeDamage()
             hud.setHealthDisplay(newHealth: player.health)
         case PhysicsCategory.enemy.rawValue:
-            print("Taking damage!")
             player.takeDamage()
             hud.setHealthDisplay(newHealth: player.health)
         case PhysicsCategory.coin.rawValue:
-            print("Grabbing coin!")
+            if player.isDead { return }
             guard let coin = otherBody.node as? Coin else { return }
             coin.collect()
             coinsCollected += coin.value
             hud.setScoreDisplay(newCoinCount: coinsCollected)
+            if coinsCollected >= coinsForNewLife * numberOfNewLivesCollectedMultiplier && !addingALife {
+                // add to the multiplier no matter what
+                numberOfNewLivesCollectedMultiplier += 1
+                // don't want lives to go off of the screen, so they are capped out
+                if player.health == player.maxHealth { break }
+                addingALife = true
+                player.gainALife()
+                hud.setHealthDisplay(newHealth: player.health, removeHearts: false)
+                addingALife = false
+            }
         case PhysicsCategory.powerup.rawValue:
-            print("Grabbing a star!")
+            if player.isDead { return }
             player.superStar()
             guard let star = otherBody.node as? Star else { return }
             star.collectStar()
         default:
-            print("Coin has already been picked up, don't want to count it twice!")
+//            print("Coin has already been picked up, don't want to count it twice!")
+            break
         }
     }
     
