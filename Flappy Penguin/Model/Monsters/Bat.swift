@@ -17,11 +17,15 @@ class Bat: SKSpriteNode, GameSprite {
         createAnimations()
         self.size = size
         self.position = position
-        run(flyAnimation)
+        
+        // setup physics
         physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2)
         physicsBody?.affectedByGravity = false
         physicsBody?.categoryBitMask = PhysicsCategory.enemy.rawValue
         physicsBody?.collisionBitMask = ~PhysicsCategory.damagedPenguin.rawValue
+        
+        // add animations
+        run(flyAnimation)
     }
     
     // MARK: - Animations
@@ -33,18 +37,14 @@ class Bat: SKSpriteNode, GameSprite {
             textureAtlas.textureNamed("bat-fly")
         ]
         
-        let randomX = CGFloat(arc4random_uniform(100))
-        let randomBigY = CGFloat(arc4random_uniform(200))
-        let randomSmallY = CGFloat(arc4random_uniform(30))
-        let randomSpeed = Double(arc4random_uniform(150))
+        let randomY = CGFloat(arc4random_uniform(200))
+        let randomSpeed = 100 / (Double(arc4random_uniform(75)) + 50)
         
-        let pathUp = SKAction.moveBy(x: -randomX, y: randomBigY, duration: randomSpeed)
-        let pathRight = SKAction.moveBy(x: randomX, y: randomSmallY, duration: randomSpeed)
-        let pathDown = SKAction.moveBy(x: -randomX, y: -100, duration: randomSpeed)
+        let pathUp = SKAction.moveBy(x: 0, y: randomY, duration: randomSpeed)
+        let pathDown = SKAction.moveBy(x: 0, y: -randomY, duration: randomSpeed)
         
         let flyPattern = SKAction.repeatForever(SKAction.sequence([
                 pathUp,
-                pathRight,
                 pathDown
             ]))
         
