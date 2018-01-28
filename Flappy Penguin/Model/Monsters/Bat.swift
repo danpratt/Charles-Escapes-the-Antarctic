@@ -37,8 +37,8 @@ class Bat: SKSpriteNode, GameSprite {
             textureAtlas.textureNamed("bat-fly")
         ]
         
-        let randomY = CGFloat(arc4random_uniform(200))
-        let randomSpeed = 100 / (Double(arc4random_uniform(75)) + 50)
+        let randomY = CGFloat(arc4random_uniform(75) + 25)
+        let randomSpeed = Double(arc4random_uniform(3) + 1)
         
         let pathUp = SKAction.moveBy(x: 0, y: randomY, duration: randomSpeed)
         let pathDown = SKAction.moveBy(x: 0, y: -randomY, duration: randomSpeed)

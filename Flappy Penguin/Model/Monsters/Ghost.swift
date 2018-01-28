@@ -50,7 +50,7 @@ class Ghost: SKSpriteNode, GameSprite {
         
         let randomDuration = Double(arc4random_uniform(4) + 3)
         
-        let circlePath = UIBezierPath(arcCenter: position, radius: 60, startAngle: 0, endAngle: CGFloat(2 * Double.pi), clockwise: false)
+        let circlePath = UIBezierPath(arcCenter: position, radius: 80, startAngle: 0, endAngle: CGFloat(2 * Double.pi), clockwise: false)
         
         let circleAction = SKAction.follow(circlePath.cgPath, asOffset: false, orientToPath: false, duration: randomDuration)
         
