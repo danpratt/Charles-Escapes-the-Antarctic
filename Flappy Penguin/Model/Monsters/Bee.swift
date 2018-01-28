@@ -11,6 +11,7 @@ import SpriteKit
 class Bee: SKSpriteNode, GameSprite {
     var textureAtlas: SKTextureAtlas = SKTextureAtlas(named: "bee")
     var flyAnimation = SKAction()
+    var flightPathAnimation = SKAction()
     
     func spawn(parentNode: SKNode, position: CGPoint, size: CGSize = CGSize(width: 28, height: 24)) {
         parentNode.addChild(self)
@@ -18,6 +19,7 @@ class Bee: SKSpriteNode, GameSprite {
         self.size = size
         self.position = position
         run(flyAnimation)
+        run(flightPathAnimation)
         
         // add physics engine
         physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2)
@@ -37,8 +39,28 @@ class Bee: SKSpriteNode, GameSprite {
             textureAtlas.textureNamed("bee"),
             textureAtlas.textureNamed("bee-fly")
         ]
+        
+        let randomX = CGFloat(arc4random_uniform(200))
+        let randomSpeed = 100 / (Double(arc4random_uniform(75)) + 50)
+        
+        let flyLeft = SKAction.sequence([
+                SKAction.moveBy(x: -randomX, y: 5, duration: randomSpeed),
+                SKAction.scaleX(to: -1, duration: 0.3)
+            ])
+        let flyRight = SKAction.sequence([
+                SKAction.moveBy(x: randomX, y: -5, duration: randomSpeed),
+                SKAction.scaleX(to: 1, duration: 0.3)
+            ])
+        
+        let flightPath = SKAction.repeatForever(SKAction.sequence([
+                flyLeft,
+                flyRight
+            ]))
+        
         let flyAction = SKAction.animate(with: beeFlyingFrames, timePerFrame: 0.14)
+        
         flyAnimation = SKAction.repeatForever(flyAction)
+        flightPathAnimation = SKAction.repeatForever(flightPath)
     }
     
 }
