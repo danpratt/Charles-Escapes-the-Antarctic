@@ -18,7 +18,19 @@ class EncounterManager {
     let encounterNames: [String] = [
         "EncounterBats",
         "EncounterBees",
-        "EncounterCoins"
+        "EncounterCoins",
+        "EncounterGhosts",
+        "EncounterFlys",
+        "EncounterHardOne",
+        "EncounterLikeSpinningPlates",
+        "EncounterEnemies",
+        "EncounterLotsOfBees",
+        "EncounterQueenBee",
+        "EncounterAllCoins",
+        "EncounterBigCoin",
+        "EncounterKingFly",
+        "EncounterGhostKing",
+        "EncounterMoreSpinningPlates"
     ]
     
     // Create array for nodes
@@ -49,18 +61,32 @@ class EncounterManager {
                 case "Bee":
                     let bee = Bee()
                     bee.spawn(parentNode: encounter, position: node.position)
+                case "QueenBee":
+                    let bee = Bee()
+                    bee.spawn(parentNode: encounter, position: node.position, size: node.frame.size)
                 case "Blade":
                     let blade = Blade()
                     blade.spawn(parentNode: encounter, position: node.position)
+                    blade.zRotation = node.zRotation
                 case "Ghost":
                     let ghost = Ghost()
                     ghost.spawn(parentNode: encounter, position: node.position)
+                case "GhostKing":
+                    let ghost = Ghost()
+                    ghost.spawn(parentNode: encounter, position: node.position, size: node.frame.size)
                 case "MadFly":
                     let madFly = MadFly()
                     madFly.spawn(parentNode: encounter, position: node.position)
+                case "KingMadFly":
+                    let madFly = MadFly()
+                    madFly.spawn(parentNode: encounter, position: node.position, size: node.frame.size)
                 case "GoldCoin":
                     let goldCoin = Coin()
                     goldCoin.spawn(parentNode: encounter, position: node.position)
+                    goldCoin.turnToGold()
+                case "BigGoldCoin":
+                    let goldCoin = Coin()
+                    goldCoin.spawn(parentNode: encounter, position: node.position, size: node.frame.size)
                     goldCoin.turnToGold()
                 case "BronzeCoin":
                     let bronzeCoin = Coin()
@@ -135,8 +161,13 @@ class EncounterManager {
             // remove any velocity
             sprite.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
             sprite.physicsBody?.angularVelocity = 0
-            // reset any rotation
-            sprite.zRotation = 0
+            
+            if let _ = sprite as? Blade {
+                print("Blade")
+            } else {
+                // reset any rotation
+                sprite.zRotation = 0
+            }
             
             // reset back to original position
             guard let initialPositionValue = sprite.userData?.value(forKey: EncounterKeys.InitialPosition) as? NSValue else {

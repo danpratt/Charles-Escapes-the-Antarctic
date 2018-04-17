@@ -12,6 +12,7 @@
 		650049522017E30B00515BA9 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650049512017E30B00515BA9 /* Background.swift */; };
 		6504696D2017ECE800D55272 /* CharlesPath.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6504696B2017ECE800D55272 /* CharlesPath.sks */; };
 		6504696E2017ECE800D55272 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6504696C2017ECE800D55272 /* Assets.xcassets */; };
+		65487C0C2085657C00D504EA /* EncounterLikeSpinningPlates.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65487C0B2085657C00D504EA /* EncounterLikeSpinningPlates.sks */; };
 		65796C292016CCA500E415B6 /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65796C282016CCA500E415B6 /* PhysicsCategory.swift */; };
 		65A5AD2D201147A100A0DA7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5AD2C201147A100A0DA7F /* AppDelegate.swift */; };
 		65A5AD31201147A100A0DA7F /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65A5AD30201147A100A0DA7F /* Actions.sks */; };
@@ -23,6 +24,17 @@
 		65A5AD48201147A200A0DA7F /* Charles_Escapes_the_AntarcticTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5AD47201147A200A0DA7F /* Charles_Escapes_the_AntarcticTests.swift */; };
 		65A5AD53201147A200A0DA7F /* Charles_Escapes_the_AntarcticUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5AD52201147A200A0DA7F /* Charles_Escapes_the_AntarcticUITests.swift */; };
 		65A5AD67201164B500A0DA7F /* bee.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 65A5AD66201164B500A0DA7F /* bee.atlas */; };
+		65C908D8208567FA003163F9 /* EncounterKingFly.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65C908CA208567F8003163F9 /* EncounterKingFly.sks */; };
+		65C908D9208567FA003163F9 /* EncounterAllCoins.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65C908CB208567F8003163F9 /* EncounterAllCoins.sks */; };
+		65C908DA208567FA003163F9 /* EncounterBigCoin.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65C908CC208567F8003163F9 /* EncounterBigCoin.sks */; };
+		65C908DC208567FA003163F9 /* EncounterLotsOfBees.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65C908CE208567F9003163F9 /* EncounterLotsOfBees.sks */; };
+		65C908DF208567FA003163F9 /* EncounterQueenBee.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65C908D1208567F9003163F9 /* EncounterQueenBee.sks */; };
+		65C908E0208567FA003163F9 /* EncounterGhostKing.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65C908D2208567F9003163F9 /* EncounterGhostKing.sks */; };
+		65C908E4208567FA003163F9 /* EncounterMoreSpinningPlates.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65C908D6208567FA003163F9 /* EncounterMoreSpinningPlates.sks */; };
+		65C908E5208567FA003163F9 /* EncounterEnemies.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65C908D7208567FA003163F9 /* EncounterEnemies.sks */; };
+		65D7DC1C201E6266000386E6 /* EncounterGhosts.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65D7DC1B201E6266000386E6 /* EncounterGhosts.sks */; };
+		65D7DC1E201E65F0000386E6 /* EncounterFlys.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65D7DC1D201E65F0000386E6 /* EncounterFlys.sks */; };
+		65D7DC20201E6724000386E6 /* EncounterHardOne.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65D7DC1F201E6724000386E6 /* EncounterHardOne.sks */; };
 		65E0746420191C7100827960 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E0746320191C7100827960 /* GameKit.framework */; };
 		65EEC10F20119F0800CA6CAD /* GameSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EEC10E20119F0800CA6CAD /* GameSprite.swift */; };
 		65EEC1122011A06E00CA6CAD /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EEC1112011A06E00CA6CAD /* Bee.swift */; };
@@ -77,6 +89,7 @@
 		650049512017E30B00515BA9 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		6504696B2017ECE800D55272 /* CharlesPath.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CharlesPath.sks; sourceTree = "<group>"; };
 		6504696C2017ECE800D55272 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		65487C0B2085657C00D504EA /* EncounterLikeSpinningPlates.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterLikeSpinningPlates.sks; sourceTree = "<group>"; };
 		65796C282016CCA500E415B6 /* PhysicsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
 		65A5AD29201147A100A0DA7F /* Charles Escapes the Antarctic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Charles Escapes the Antarctic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A5AD2C201147A100A0DA7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +107,17 @@
 		65A5AD52201147A200A0DA7F /* Charles_Escapes_the_AntarcticUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charles_Escapes_the_AntarcticUITests.swift; sourceTree = "<group>"; };
 		65A5AD54201147A200A0DA7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65A5AD66201164B500A0DA7F /* bee.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bee.atlas; sourceTree = "<group>"; };
+		65C908CA208567F8003163F9 /* EncounterKingFly.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterKingFly.sks; sourceTree = "<group>"; };
+		65C908CB208567F8003163F9 /* EncounterAllCoins.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterAllCoins.sks; sourceTree = "<group>"; };
+		65C908CC208567F8003163F9 /* EncounterBigCoin.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterBigCoin.sks; sourceTree = "<group>"; };
+		65C908CE208567F9003163F9 /* EncounterLotsOfBees.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterLotsOfBees.sks; sourceTree = "<group>"; };
+		65C908D1208567F9003163F9 /* EncounterQueenBee.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterQueenBee.sks; sourceTree = "<group>"; };
+		65C908D2208567F9003163F9 /* EncounterGhostKing.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterGhostKing.sks; sourceTree = "<group>"; };
+		65C908D6208567FA003163F9 /* EncounterMoreSpinningPlates.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterMoreSpinningPlates.sks; sourceTree = "<group>"; };
+		65C908D7208567FA003163F9 /* EncounterEnemies.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterEnemies.sks; sourceTree = "<group>"; };
+		65D7DC1B201E6266000386E6 /* EncounterGhosts.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterGhosts.sks; sourceTree = "<group>"; };
+		65D7DC1D201E65F0000386E6 /* EncounterFlys.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterFlys.sks; sourceTree = "<group>"; };
+		65D7DC1F201E6724000386E6 /* EncounterHardOne.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterHardOne.sks; sourceTree = "<group>"; };
 		65E0746320191C7100827960 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		65E0746520191CBE00827960 /* Charles Escapes the Antarctic.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Charles Escapes the Antarctic.entitlements"; sourceTree = "<group>"; };
 		65EEC10E20119F0800CA6CAD /* GameSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSprite.swift; sourceTree = "<group>"; };
@@ -369,6 +393,18 @@
 				65EF4F62201522F200CC6E71 /* EncounterBats.sks */,
 				65EF4F63201522F200CC6E71 /* EncounterBees.sks */,
 				65EF4F64201522F200CC6E71 /* EncounterCoins.sks */,
+				65D7DC1B201E6266000386E6 /* EncounterGhosts.sks */,
+				65D7DC1D201E65F0000386E6 /* EncounterFlys.sks */,
+				65D7DC1F201E6724000386E6 /* EncounterHardOne.sks */,
+				65487C0B2085657C00D504EA /* EncounterLikeSpinningPlates.sks */,
+				65C908D7208567FA003163F9 /* EncounterEnemies.sks */,
+				65C908CE208567F9003163F9 /* EncounterLotsOfBees.sks */,
+				65C908D1208567F9003163F9 /* EncounterQueenBee.sks */,
+				65C908CB208567F8003163F9 /* EncounterAllCoins.sks */,
+				65C908CC208567F8003163F9 /* EncounterBigCoin.sks */,
+				65C908CA208567F8003163F9 /* EncounterKingFly.sks */,
+				65C908D2208567F9003163F9 /* EncounterGhostKing.sks */,
+				65C908D6208567FA003163F9 /* EncounterMoreSpinningPlates.sks */,
 			);
 			path = Encounters;
 			sourceTree = "<group>";
@@ -457,7 +493,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Daniel Pratt";
 				TargetAttributes = {
 					65A5AD28201147A100A0DA7F = {
@@ -509,16 +545,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65C908E5208567FA003163F9 /* EncounterEnemies.sks in Resources */,
+				65487C0C2085657C00D504EA /* EncounterLikeSpinningPlates.sks in Resources */,
 				65EEC1302013CC2800CA6CAD /* blade.atlas in Resources */,
+				65C908D9208567FA003163F9 /* EncounterAllCoins.sks in Resources */,
+				65D7DC1E201E65F0000386E6 /* EncounterFlys.sks in Resources */,
 				65EEC1202011ADB600CA6CAD /* charles.atlas in Resources */,
+				65C908DF208567FA003163F9 /* EncounterQueenBee.sks in Resources */,
 				65FEFF8E201807A00020AF52 /* Coin.aif in Resources */,
+				65C908D8208567FA003163F9 /* EncounterKingFly.sks in Resources */,
 				65EF4F65201522F200CC6E71 /* EncounterBats.sks in Resources */,
 				65EEC11A2011A67100CA6CAD /* ground.atlas in Resources */,
+				65C908E0208567FA003163F9 /* EncounterGhostKing.sks in Resources */,
+				65C908DA208567FA003163F9 /* EncounterBigCoin.sks in Resources */,
+				65D7DC20201E6724000386E6 /* EncounterHardOne.sks in Resources */,
 				65FEFF8C201807A00020AF52 /* Powerup.aif in Resources */,
 				65EEC1252013C5F700CA6CAD /* goods.atlas in Resources */,
 				65FEFF8B201807A00020AF52 /* Hurt.aif in Resources */,
+				65D7DC1C201E6266000386E6 /* EncounterGhosts.sks in Resources */,
 				65FEFF8D201807A00020AF52 /* StartGame.aif in Resources */,
 				65A5AD67201164B500A0DA7F /* bee.atlas in Resources */,
+				65C908DC208567FA003163F9 /* EncounterLotsOfBees.sks in Resources */,
 				65A5AD38201147A100A0DA7F /* Main.storyboard in Resources */,
 				6504696D2017ECE800D55272 /* CharlesPath.sks in Resources */,
 				65EEC12F2013CC2800CA6CAD /* bat.atlas in Resources */,
@@ -529,6 +576,7 @@
 				65A5AD3D201147A100A0DA7F /* LaunchScreen.storyboard in Resources */,
 				6504696E2017ECE800D55272 /* Assets.xcassets in Resources */,
 				65A5AD31201147A100A0DA7F /* Actions.sks in Resources */,
+				65C908E4208567FA003163F9 /* EncounterMoreSpinningPlates.sks in Resources */,
 				65EEC12C2013CC0600CA6CAD /* madfly.atlas in Resources */,
 				6500494C2017D7D700515BA9 /* hud.atlas in Resources */,
 				65EEC1342013CF2C00CA6CAD /* ghost.atlas in Resources */,
@@ -643,6 +691,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -650,6 +699,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -700,6 +750,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -707,6 +758,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -743,6 +795,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZJ769HHQS2;
 				INFOPLIST_FILE = "$(SRCROOT)/Flappy Penguin/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.blaumagier.Flappy-Penguin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -758,6 +811,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZJ769HHQS2;
 				INFOPLIST_FILE = "$(SRCROOT)/Flappy Penguin/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.blaumagier.Flappy-Penguin";
 				PRODUCT_NAME = "$(TARGET_NAME)";

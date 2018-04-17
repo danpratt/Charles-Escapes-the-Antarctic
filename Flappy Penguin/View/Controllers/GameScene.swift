@@ -35,7 +35,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // Property for collecting coins
     var coinsCollected = 0
     // the amount of coins needed to collect to get a new life
-    let coinsForNewLife = 50
+    let coinsForNewLife = 500
     var numberOfNewLivesCollectedMultiplier = 1
     var addingALife = false
     
