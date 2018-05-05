@@ -14,6 +14,9 @@ import CloudKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
+    // set app delegate
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     // Create world
     let world = SKNode()
     let ground = Ground()
@@ -283,7 +286,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 }
                 
                 // save score to iCloud
-                userRecord["lifetimeScore"] = appDelegate.lifetimeScore as CKRecordValue
+                userRecord["lifetimeScore"] = self.appDelegate.lifetimeScore as CKRecordValue
                 privateDB.save(userRecord, completionHandler: { (record, error) in
                     if let saveError = error { print(saveError) }
                     print("Saved record: \(String(describing: record))")
@@ -446,7 +449,61 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
 
+        // check to see if user has earned over 10000 coins in their liftime
+        let bronzeLTAchievement = GKAchievement(identifier: "10000_lifetime_coins")
+        if !bronzeLTAchievement.isCompleted {
+            bronzeLTAchievement.showsCompletionBanner = true
+            bronzeLTAchievement.percentComplete = Double(appDelegate.lifetimeScore / 10000)
+            GKAchievement.report([bronzeLTAchievement], withCompletionHandler: { (error) in
+                if let error = error {
+                    print("There was an error saving achievement: \(String(describing: error))")
+                }
+            })
+        } else {
+            print("Already completed")
+        }
         
+        // check to see if user has earned over 25000 coins in their liftime
+        let silverLTAchievement = GKAchievement(identifier: "25000_lifetime_coins")
+        if !silverLTAchievement.isCompleted {
+            silverLTAchievement.showsCompletionBanner = true
+            silverLTAchievement.percentComplete = Double(appDelegate.lifetimeScore / 25000)
+            GKAchievement.report([silverLTAchievement], withCompletionHandler: { (error) in
+                if let error = error {
+                    print("There was an error saving achievement: \(String(describing: error))")
+                }
+            })
+        } else {
+            print("Already completed")
+        }
+        
+        // check to see if user has earned over 50000 coins in their liftime
+        let goldLTAchievement = GKAchievement(identifier: "50000_lifetime_coins")
+        if !goldLTAchievement.isCompleted {
+            goldLTAchievement.showsCompletionBanner = true
+            goldLTAchievement.percentComplete = Double(appDelegate.lifetimeScore / 50000)
+            GKAchievement.report([goldLTAchievement], withCompletionHandler: { (error) in
+                if let error = error {
+                    print("There was an error saving achievement: \(String(describing: error))")
+                }
+            })
+        } else {
+            print("Already completed")
+        }
+        
+        // check to see if user has earned over 250000 coins in their liftime
+        let platinumLTAchievement = GKAchievement(identifier: "250000_lifetime_coins")
+        if !platinumLTAchievement.isCompleted {
+            platinumLTAchievement.showsCompletionBanner = true
+            platinumLTAchievement.percentComplete = Double(appDelegate.lifetimeScore / 50000)
+            GKAchievement.report([platinumLTAchievement], withCompletionHandler: { (error) in
+                if let error = error {
+                    print("There was an error saving achievement: \(String(describing: error))")
+                }
+            })
+        } else {
+            print("Already completed")
+        }
         
     }
     

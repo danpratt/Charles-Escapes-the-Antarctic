@@ -10,9 +10,10 @@ import SpriteKit
 import GameKit
 import CloudKit
 
-let appDelegate = UIApplication.shared.delegate as! AppDelegate
-
 class MenuScene: SKScene, GKGameCenterControllerDelegate {
+    
+    // set app delegate
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     // get texture
     let textureAtlas: SKTextureAtlas = SKTextureAtlas(named: "hud")
@@ -32,15 +33,21 @@ class MenuScene: SKScene, GKGameCenterControllerDelegate {
         let db = CKContainer.default()
         let privateDB = db.privateCloudDatabase
 
-        db.fetchUserRecordID { (recordID, error) in
-            privateDB.fetch(withRecordID: recordID!, completionHandler: { (record, error) in
+        db.fetchUserRecordID { (rID, error) in
+            guard let recordID = rID else {
+                let score = UserDefaults.standard.integer(forKey: "lifetimeScore")
+                self.appDelegate.lifetimeScore = Int64(score)
+                return
+            }
+            
+            privateDB.fetch(withRecordID: recordID, completionHandler: { (record, error) in
                 guard let userRecord = record, let lifetimeScore = userRecord["lifetimeScore"] as? Int64, error == nil else {
                     let score = UserDefaults.standard.integer(forKey: "lifetimeScore")
-                    appDelegate.lifetimeScore = Int64(score)
+                    self.appDelegate.lifetimeScore = Int64(score)
                     return
                 }
                 
-                appDelegate.lifetimeScore = lifetimeScore
+                self.appDelegate.lifetimeScore = lifetimeScore
                 print("Got a lifetime score of: \(lifetimeScore)")
             })
         }
