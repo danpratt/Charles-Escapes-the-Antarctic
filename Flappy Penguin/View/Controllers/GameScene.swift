@@ -9,6 +9,7 @@
 import SpriteKit
 import GameplayKit
 import GameKit
+import CloudKit
 //import CoreMotion
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
@@ -269,6 +270,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // MARK: - Game Over
     func gameOver() {
+        
+        appDelegate.lifetimeScore += Int64(coinsCollected)
+        UserDefaults.standard.set(Int(appDelegate.lifetimeScore), forKey: "lifetimeScore")
+        let db = CKContainer.default()
+        let privateDB = db.privateCloudDatabase
+        
+        db.fetchUserRecordID { (recordID, error) in
+            privateDB.fetch(withRecordID: recordID!, completionHandler: { (record, error) in
+                guard let userRecord = record, error == nil else {
+                    return
+                }
+                
+                // save score to iCloud
+                userRecord["lifetimeScore"] = appDelegate.lifetimeScore as CKRecordValue
+                privateDB.save(userRecord, completionHandler: { (record, error) in
+                    if let saveError = error { print(saveError) }
+                    print("Saved record: \(String(describing: record))")
+                })
+            })
+        }
+
         updateLeaderboard()
         checkForAchievements()
         hud.showGameOverButtons()
@@ -359,7 +381,72 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 print("Already completed")
             }
         }
+        
+        // check to see if user has earned over 1750 coins
+        if coinsCollected >= 1750 {
+            let achievement = GKAchievement(identifier: "1750_coins")
+            if !achievement.isCompleted {
+                achievement.showsCompletionBanner = true
+                achievement.percentComplete = 100
+                GKAchievement.report([achievement], withCompletionHandler: { (error) in
+                    if let error = error {
+                        print("There was an error saving achievement: \(String(describing: error))")
+                    }
+                })
+            } else {
+                print("Already completed")
+            }
+        }
+        
+        // check to see if user has earned over 2000 coins
+        if coinsCollected >= 2000 {
+            let achievement = GKAchievement(identifier: "2000_coins")
+            if !achievement.isCompleted {
+                achievement.showsCompletionBanner = true
+                achievement.percentComplete = 100
+                GKAchievement.report([achievement], withCompletionHandler: { (error) in
+                    if let error = error {
+                        print("There was an error saving achievement: \(String(describing: error))")
+                    }
+                })
+            } else {
+                print("Already completed")
+            }
+        }
 
+        // check to see if user has earned over 5000 coins
+        if coinsCollected >= 5000 {
+            let achievement = GKAchievement(identifier: "5000_coins")
+            if !achievement.isCompleted {
+                achievement.showsCompletionBanner = true
+                achievement.percentComplete = 100
+                GKAchievement.report([achievement], withCompletionHandler: { (error) in
+                    if let error = error {
+                        print("There was an error saving achievement: \(String(describing: error))")
+                    }
+                })
+            } else {
+                print("Already completed")
+            }
+        }
+        
+        // check to see if user has earned over 10000 coins
+        if coinsCollected >= 10000 {
+            let achievement = GKAchievement(identifier: "10000_coins")
+            if !achievement.isCompleted {
+                achievement.showsCompletionBanner = true
+                achievement.percentComplete = 100
+                GKAchievement.report([achievement], withCompletionHandler: { (error) in
+                    if let error = error {
+                        print("There was an error saving achievement: \(String(describing: error))")
+                    }
+                })
+            } else {
+                print("Already completed")
+            }
+        }
+
+        
         
     }
     

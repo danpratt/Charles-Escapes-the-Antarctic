@@ -8,6 +8,9 @@
 
 import SpriteKit
 import GameKit
+import CloudKit
+
+let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
 class MenuScene: SKScene, GKGameCenterControllerDelegate {
 
@@ -22,7 +25,26 @@ class MenuScene: SKScene, GKGameCenterControllerDelegate {
     
     // MARK: - Did Move to View
     
+    
     override func didMove(to view: SKView) {
+        
+        // get lifetime score from cloudkit
+        let db = CKContainer.default()
+        let privateDB = db.privateCloudDatabase
+
+        db.fetchUserRecordID { (recordID, error) in
+            privateDB.fetch(withRecordID: recordID!, completionHandler: { (record, error) in
+                guard let userRecord = record, let lifetimeScore = userRecord["lifetimeScore"] as? Int64, error == nil else {
+                    let score = UserDefaults.standard.integer(forKey: "lifetimeScore")
+                    appDelegate.lifetimeScore = Int64(score)
+                    return
+                }
+                
+                appDelegate.lifetimeScore = lifetimeScore
+                print("Got a lifetime score of: \(lifetimeScore)")
+            })
+        }
+        
         // position nodes from scene center
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
         // set sky blue background color

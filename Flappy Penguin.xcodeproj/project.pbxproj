@@ -57,6 +57,7 @@
 		65EF4F65201522F200CC6E71 /* EncounterBats.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65EF4F62201522F200CC6E71 /* EncounterBats.sks */; };
 		65EF4F66201522F200CC6E71 /* EncounterBees.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65EF4F63201522F200CC6E71 /* EncounterBees.sks */; };
 		65EF4F67201522F200CC6E71 /* EncounterCoins.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65EF4F64201522F200CC6E71 /* EncounterCoins.sks */; };
+		65FCBD80209E3CB1004CB9B4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FCBD7F209E3CB1004CB9B4 /* CloudKit.framework */; };
 		65FEFF832017F4F60020AF52 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FEFF822017F4F60020AF52 /* MenuScene.swift */; };
 		65FEFF8A201807A00020AF52 /* BackgroundMusic.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 65FEFF85201807A00020AF52 /* BackgroundMusic.m4a */; };
 		65FEFF8B201807A00020AF52 /* Hurt.aif in Resources */ = {isa = PBXBuildFile; fileRef = 65FEFF86201807A00020AF52 /* Hurt.aif */; };
@@ -141,6 +142,7 @@
 		65EF4F62201522F200CC6E71 /* EncounterBats.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterBats.sks; sourceTree = "<group>"; };
 		65EF4F63201522F200CC6E71 /* EncounterBees.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterBees.sks; sourceTree = "<group>"; };
 		65EF4F64201522F200CC6E71 /* EncounterCoins.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterCoins.sks; sourceTree = "<group>"; };
+		65FCBD7F209E3CB1004CB9B4 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		65FEFF822017F4F60020AF52 /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		65FEFF85201807A00020AF52 /* BackgroundMusic.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = BackgroundMusic.m4a; sourceTree = "<group>"; };
 		65FEFF86201807A00020AF52 /* Hurt.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hurt.aif; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65E0746420191C7100827960 /* GameKit.framework in Frameworks */,
+				65FCBD80209E3CB1004CB9B4 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +263,7 @@
 		65E074602019114500827960 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				65FCBD7F209E3CB1004CB9B4 /* CloudKit.framework */,
 				65E0746320191C7100827960 /* GameKit.framework */,
 			);
 			name = Frameworks;
@@ -504,7 +508,10 @@
 								enabled = 1;
 							};
 							com.apple.Push = {
-								enabled = 0;
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
 							};
 						};
 					};
@@ -792,6 +799,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Charles Escapes the Antarctic.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZJ769HHQS2;
 				INFOPLIST_FILE = "$(SRCROOT)/Flappy Penguin/Info.plist";
@@ -808,6 +816,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Charles Escapes the Antarctic.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZJ769HHQS2;
 				INFOPLIST_FILE = "$(SRCROOT)/Flappy Penguin/Info.plist";
